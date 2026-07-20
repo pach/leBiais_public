@@ -3,146 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation - Le Biais</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Le Biais - Documentation Officielle</title>
     <style>
-        :root { --primary-color: #2E7D32; --secondary-color: #1565C0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
-        .sidebar { position: fixed; top: 0; left: 0; bottom: 0; width: 280px; padding: 20px; background: #f8f9fa; border-right: 1px solid #dee2e6; overflow-y: auto; }
-        .content { margin-left: 300px; padding: 40px; max-width: 900px; }
-        h1, h2, h3 { color: var(--primary-color); font-weight: bold; }
-        .nav-link { color: #444; padding: 5px 0; }
-        .nav-link:hover { color: var(--primary-color); }
-        .badge-feature { background-color: var(--secondary-color); margin-right: 5px; }
-        code { background: #f1f1f1; padding: 2px 5px; border-radius: 4px; color: #d63384; }
-        .feature-card { border-left: 5px solid var(--primary-color); background: #f1f8e9; padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0; }
-        .warning-card { border-left: 5px solid #d32f2f; background: #fff1f1; padding: 15px; margin: 20px 0; border-radius: 0 8px 8px 0; }
+        :root {
+            --primary-color: #1B5E20;
+            --secondary-color: #2E7D32;
+            --accent-color: #E65100;
+            --bg-color: #F5F5F5;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 0.5rem 0 0; opacity: 0.9; font-style: italic; }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .intro {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .important-box {
+            background-color: #FFF3E0;
+            border-left: 5px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .important-box h3 { margin-top: 0; color: #BF360C; }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .signal-link {
+            display: block;
+            background: #2196F3;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 2rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 0.5rem; }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+        }
     </style>
 </head>
 <body>
 
-<div class="sidebar d-none d-md-block">
-    <h3 class="mb-4">Le Biais</h3>
-    <nav class="nav flex-column">
-        <a class="nav-link" href="#intro">Introduction</a>
-        <a class="nav-link" href="#setup">Configuration Initiale</a>
-        <a class="nav-link" href="#garde">Garde & Chantiers</a>
-        <a class="nav-link" href="#troupeau">Gestion du Troupeau</a>
-        <a class="nav-link" href="#soins">Soins & Pharmacie</a>
-        <a class="nav-link" href="#stats">Statistiques & Bilans</a>
-        <a class="nav-link" href="#sync">Synchronisation (Cloud/BT)</a>
-        <a class="nav-link" href="#security">Sécurité & Médias</a>
-    </nav>
-</div>
+<header>
+    <h1>Le Biais</h1>
+    <p>Berger.es insoumis.es ayant une Adoration de l’Innovation Secretement</p>
+</header>
 
-<div class="content">
-    <section id="intro">
-        <h1>Introduction</h1>
-        <p class="lead"><strong>Le Biais</strong> est une application professionnelle de suivi pastoral conçue pour les bergers et éleveurs travaillant en milieu montagnard.</p>
-        <p>Elle permet de centraliser la gestion des sessions de garde, les travaux de chantier, la traçabilité sanitaire et les mouvements de troupeaux, tout en assurant une synchronisation sécurisée entre collègues, même avec une connexion internet intermittente.</p>
+<div class="container">
+    <section class="intro">
+        <p>Est-ce que vous voulez prendre “Le Biais” ?! Dorénavant, c’est aussi un outil numérique. C’est parti d'une simple boutade : <em>"C’est galère de se tenir aux carnets, tu veux faire un excel pour les heures ? Et pourquoi pas faire une appli tant qu’on y est ?"</em>.</p>
+
+        <p>Voici donc une application pour smartphone Android pensée par des bergers pour les <strong>berger.es, les chevrier.es et les vacher.es</strong>.</p>
+
+        <h3>Cet outil répond à 5 critères :</h3>
+        <ul>
+            <li><strong>Centraliser</strong> tout ce qu’on écrit sur nos carnets (soins, pâturage, fiches horaires, calendrier, etc.).</li>
+            <li><strong>Transmettre</strong> les informations utiles pour la saison entre travailleur.euses ou binômes, sans risque de perdre le classique carnet de bord.</li>
+            <li><strong>Faciliter l’organisation</strong> grâce à des outils mis en commun (notes, calendrier).</li>
+            <li><strong>Fiabiliser le pointage</strong> de nos heures de travail effectives pour appréhender la réalité de nos journées et nous protéger légalement.</li>
+            <li><strong>Produire des statistiques</strong> claires sur le travail, les repos et les soins.</li>
+        </ul>
     </section>
 
-    <hr class="my-5">
+    <div class="important-box">
+        <h3>À savoir !</h3>
+        <p>🚩 <strong>Pas d'Internet requis :</strong> L'application fonctionne sans connexion, sauf pour la synchronisation Cloud optionnelle.</p>
+        <p>🔒 <strong>Confidentialité totale :</strong> Aucune donnée n'est stockée ailleurs que sur votre téléphone ou de manière chiffrée (E2EE) si vous activez la synchro automatique.</p>
+        <p>🔗 <strong>Synchro locale :</strong> Il est possible de synchroniser vos données avec un binôme via Bluetooth.</p>
+    </div>
 
-    <section id="setup">
-        <h2>Configuration Initiale</h2>
+    <a href="https://signal.group/#CjQKIIhdAA6bUFychgb4Pd47Ik6Q2A1K9JxBwAcLVOHIn0xoEhBDmhqNPRKAmFHqTnhX6Sd-" class="signal-link">
+        🚀 Rejoindre le groupe Beta-Testeurs sur Signal
+    </a>
+
+    <h2>Aperçu des fonctionnalités</h2>
+
+    <div class="feature-grid">
         <div class="feature-card">
-            <h4>Premier démarrage</h4>
-            <p>Lors de la première ouverture, renseignez votre nom et le nom de l'alpage. Ces informations créent votre <strong>Projet Pastoral</strong>.</p>
+            <h3>🛡️ GARDE</h3>
+            <p>Enregistrez vos heures, vos parcours et vos quartiers pâturés en 3 clics. Notez les moments clés (sortie du parc, chôme, retour) et saisissez la météo via des icônes rapides.</p>
         </div>
-        <ul>
-            <li><strong>Espèces</strong> : Sélectionnez dans les réglages les races présentes (Brebis, Chèvres, Vaches, etc.). Les formulaires s'adapteront automatiquement.</li>
-            <li><strong>Marques</strong> : Enregistrez les propriétaires (Marques) pour permettre le suivi individualisé des lots.</li>
-        </ul>
-    </section>
 
-    <section id="garde">
-        <h2>Suivi de Garde & Chantiers</h2>
-        <p>Les sessions permettent de mesurer précisément le temps de travail et de documenter la journée.</p>
-
-        <h3>La Garde</h3>
-        <ul>
-            <li><strong>Tracking GPS</strong> : Optionnel, il enregistre votre parcours durant la garde.</li>
-            <li><strong>Événements</strong> : Marquez les moments clés (Départ couchade, Mise en chôme, Retour, Notes).</li>
-            <li><strong>Photos</strong> : Vous pouvez ajouter des photos à chaque événement de garde.</li>
-        </ul>
-
-        <h3>Les Chantiers</h3>
-        <ul>
-            <li><strong>Types personnalisables</strong> : Créez vos propres catégories de travaux (Entretien, Clôtures, etc.). Ils seront mémorisés pour vos futurs chantiers.</li>
-            <li><strong>Notes</strong> : Ajoutez des comptes-rendus et des photos de vos réalisations.</li>
-        </ul>
-    </section>
-
-    <section id="troupeau">
-        <h2>Gestion du Troupeau</h2>
         <div class="feature-card">
-            <h4>Traçabilité par Marque</h4>
-            <p>L'application calcule automatiquement l'effectif théorique de chaque propriétaire en fonction des entrées/sorties et décès.</p>
+            <h3>🏗️ CHANTIER</h3>
+            <p>Comptabilisez vos heures sur les temps forts : soins collectifs, pédiluve, aménagement, pose de filets. Gardez une trace précise de chaque intervention.</p>
         </div>
-        <ul>
-            <li><strong>Mouvements</strong> : Enregistrez les Arrivées, Départs et Décès.</li>
-            <li><strong>Nécrologie</strong> : Un journal dédié permet de filtrer les décès par cause ou par éleveur avec photos à l'appui.</li>
-            <li><strong>Bêtes Remarquables</strong> : Gérez une liste d'animaux particuliers (sonnaillères, brebis noires, etc.) avec un système de pointage visuel (Vu/Pas vu) et gestion des quantités.</li>
-        </ul>
-    </section>
 
-    <section id="soins">
-        <h2>Carnet de Soins & Pharmacie</h2>
-        <p>Un module vétérinaire complet pour ne rien oublier des traitements en cours.</p>
-        <ul>
-            <li><strong>Saisie simplifiée</strong> : Diagnostic, localisation du soin (avec schéma), description et photos.</li>
-            <li><strong>Rappels automatiques</strong> :
-                <ul>
-                    <li><em>Suivi</em> : Alerte pour surveiller l'évolution d'un état.</li>
-                    <li><em>Piqûre</em> : Planification automatique du rappel selon les délais de votre pharmacie.</li>
-                </ul>
-            </li>
-            <li><strong>Pharmacie</strong> : Gérez votre inventaire de produits avec leurs délais de rappel par défaut.</li>
-        </ul>
-    </section>
-
-    <section id="stats">
-        <h2>Statistiques & Bilans</h2>
-        <p>L'onglet Stats propose trois analyses sur la période de votre choix :</p>
-        <ol>
-            <li><strong>Repos</strong> : Suivi des jours de repos pris par chaque membre de l'équipe.</li>
-            <li><strong>Heures</strong> : Calcul des moyennes quotidiennes et hebdomadaires basées sur les **jours réellement travaillés**.</li>
-            <li><strong>Soins</strong> : Analyse sanitaire globale ou par éleveur, avec calcul automatique du pourcentage du lot ayant reçu des soins.</li>
-        </ol>
-    </section>
-
-    <section id="sync">
-        <h2>Synchronisation</h2>
-        <p>Le Biais propose deux modes de partage des données :</p>
-
-        <h3>Cloud Supabase (E2EE)</h3>
-        <p>Synchronisation automatique toutes les 2 heures. L'icône chaîne (🔗) indique l'état :</p>
-        <ul>
-            <li><strong>🔗 (Bleu)</strong> : À jour.</li>
-            <li><strong>⛓️‍💥 (Rouge)</strong> : Données locales en attente d'envoi ou erreur réseau.</li>
-        </ul>
-
-        <h3>Synchronisation Bluetooth</h3>
-        <p>Pour le partage direct entre deux téléphones en zone blanche.
-            <br><small class="text-muted">Note : La mise en veille est désactivée automatiquement pendant le transfert.</small></p>
-    </section>
-
-    <section id="security">
-        <h2>Sécurité & Médias</h2>
-        <div class="warning-card">
-            <h4>Confidentialité Totale</h4>
-            <p>Toutes les données textuelles et les photos sont <strong>chiffrées localement (AES-GCM)</strong> avant l'envoi au Cloud. Personne, même pas l'hébergeur, ne peut voir vos données.</p>
+        <div class="feature-card">
+            <h3>💉 SOINS</h3>
+            <p>Saisie rapide par marque et numéro de boucle. Accès à l'historique de l'animal, caractéristiques, localisation du soin sur image, gestion de la pharmacie et rappels automatiques.</p>
         </div>
-        <ul>
-            <li><strong>Optimisation Photos</strong> : Réduites à 2048px et compressées pour économiser la data.</li>
-            <li><strong>Rétention Cloud</strong> : Les médias sont effacés du Cloud après **15 jours** pour libérer de l'espace, mais ils restent stockés sur vos téléphones.</li>
-            <li><strong>Suppression</strong> : Supprimer un média localement l'efface également du Cloud et des téléphones de vos collègues.</li>
-        </ul>
+
+        <div class="feature-card">
+            <h3>🐏 TROUPEAU</h3>
+            <p>Gérez vos effectifs : marques, arrivées, départs et décès. L'appli calcule l'effectif théorique pour le comparer à vos comptages. Inclut une section <strong>Bêtes remarquables</strong> pour le pointage visuel.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📝 NOTES & CONTACTS</h3>
+            <p>Un bloc-note avec système de tags et "épinglage" sur l'accueil. Un répertoire de contacts professionnels triables pour ne jamais perdre un numéro utile.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="badge">EN DÉVELOPPEMENT</div>
+            <h3>🗺️ GESTION DE PÂTURAGE</h3>
+            <p>Inventaire des équipements, état des logements et description des quartiers. À terme, cette section sera liée à un outil de cartographie du territoire.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📁 DOCUMENTS & CALENDRIER</h3>
+            <p>Sauvegardez vos fiches de paie, contrats et attestations. Visualisez toute votre activité passée en un clin d'œil sur une vue calendrier (semaine/mois).</p>
+        </div>
+    </div>
+
+    <section style="margin-top: 3rem; background: #e8f5e9; padding: 2rem; border-radius: 12px;">
+        <p><strong>Note :</strong> Pour chaque événement saisi, vous pouvez éditer a posteriori, ajouter des remarques détaillées et des photos.</p>
+        <p>La synchronisation Cloud utilise un <strong>chiffrement de bout en bout</strong> : personne d'autre que vous et votre binôme n'a accès à vos données.</p>
     </section>
 
-    <footer class="mt-5 pt-4 border-top text-center text-muted">
-        <p>&copy; 2024 Le Biais - Outil de suivi pastoral professionnel.</p>
+    <footer>
+        <p>Le Biais - Outil de suivi pastoral collaboratif</p>
+        <p>&copy; 2024 - Pensé par des bergers pour le pastoralisme</p>
     </footer>
 </div>
 
