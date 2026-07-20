@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Biais - Documentation Officielle</title>
+    <style>
+        :root {
+            --primary-color: #1B5E20;
+            --secondary-color: #2E7D32;
+            --accent-color: #E65100;
+            --bg-color: #F5F5F5;
+            --text-color: #333;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header h1 { margin: 0; font-size: 2.5rem; }
+        header p { margin: 0.5rem 0 0; opacity: 0.9; font-style: italic; }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .intro {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            margin-bottom: 2rem;
+        }
+
+        .important-box {
+            background-color: #FFF3E0;
+            border-left: 5px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .important-box h3 { margin-top: 0; color: #BF360C; }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            margin-top: 0;
+            color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: white;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .signal-link {
+            display: block;
+            background: #2196F3;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin: 2rem 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 0.5rem; }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Le Biais</h1>
+    <p>Berger.es Insoumis.es ayant une Adoration pour l’Innovation Secretement</p>
+</header>
+
+<div class="container">
+    <section class="intro">
+        <p>Est-ce que vous voulez prendre “Le Biais” ?! Le Biais ? Dorénavant, c’est aussi un outil numérique. Déso, c’est parti d'une simple boutade de geek sheepherd : <em>"C’est galère de se tenir aux carnets, tu veux faire un excel pour les heures ? Et pourquoi pas faire une appli tant qu’on y est ?"</em>.</p>
+
+        <p>Et paf ! Voici donc une application pour smartphone Android pensée par des bergers pour les <strong>berger.es, les chevrier.es et les vacher.es</strong>.</p>
+
+        <h3>Pour la faire simple, cet outil répond à 5 critères :</h3>
+        <ul>
+            <li><strong>Centraliser tout ce qu’on écrit sur nos carnets</strong> (soins, pâturage, fiches horaires, calendrier, etc.).</li>
+            <li><strong>Transmettre les informations utiles pour la saison.</strong> Que ce soit d’une année à l’autre entre les travailleur.euses qui s'enchaînent, pour un remplacement ou encore pour un binôme — le/la nouveau.elle arrivant.e peut s’emparer avec précision et à tête reposée de toutes les informations à connaître. </p>
+            Bref, cette appli peut réduire le risque de perdre des info. Le classique carnet de bord qui a disparu dans d’obscures circonstances.</li>
+            <li><strong>Faciliter l’organisation entre binôme</strong> grâce à des outils mis en commun (notes, calendrier).</li>
+            <li><strong>Faciliter le pointage et le comptage de nos heures de travail effectives.</strong>Cela permet, d’un côté,  d’appréhender la réalité de nos journées de travail, et de l’autre, de nous protéger en cas de conflit avec notre employeur. </li>
+            <li><strong>Produire et modéliser des statistiques</strong> pour avoir plusieurs aperçus synthétiques des différentes données : les heures de travail, les repos, les soins.</li>
+        </ul>
+    </section>
+
+    <div class="important-box">
+        <h3>À savoir !</h3>
+        <p>🚩 <strong>Pas d'Internet requis :</strong> L'application fonctionne sans connexion, sauf pour la synchronisation Cloud optionnelle pour les binomes. Une synchronisation bluetooth reste aussi evidemment possible</p>
+        <p>🔒 <strong>Confidentialité totale :</strong> Aucune donnée n'est stockée ailleurs que sur votre téléphone. Sauf si vous activez la synchronisation cloud, et la encore tout se fait de manière chiffrée (E2EE)</p>
+        <p>🔗 <strong>Synchro locale :</strong> Il est possible de synchroniser vos données avec un binôme via Bluetooth.</p>
+    </div>
+
+    <a href="https://signal.group/#CjQKIIhdAA6bUFychgb4Pd47Ik6Q2A1K9JxBwAcLVOHIn0xoEhBDmhqNPRKAmFHqTnhX6Sd-" class="signal-link">
+        🚀 Rejoindre le groupe Beta-Testeurs sur Signal
+    </a>
+
+    <h2>Pour rentrer un peu dans le détail, voici un aperçu des différentes sections et usages qui se trouvent dans l’application</h2>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>🛡️ GARDE</h3>
+            <p>Enregistrez vos heures, vos parcours et vos quartiers pâturés en 3 clics. Notez les moments clés (sortie du parc, chôme, retour) et saisissez la météo via des icônes rapides.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🏗️ CHANTIER</h3>
+            <p>Comptabilisez vos heures sur les temps forts : soins, pédiluve, aménagement, pose de filets. Gardez une trace précise de chaque intervention.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>💉 SOINS</h3>
+            <p>Saisie super rapide de tout vos soins. Acces au carnet de soins avec filtre par marque, numéro de boucle, type de soins... Gestion de la pharmacie et rappels de soins automatiques.</p>
+            <p>A terme, l'ensemble du carnet de soins sera exportable par marque pour etre communiqué à vos eleveurs.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🐏 TROUPEAU</h3>
+            <p>Gérez vos effectifs : marques, arrivées, départs et décès. L'appli calcule l'effectif théorique pour le comparer à vos comptages. Inclut une section <italic>Bêtes remarquables</italic> pour le pointage visuel.</p>
+            <p>vous retrouverez aussi bientot dans cette section une page "chiens" pour noter tout ce que vous aurez à garder sur vos compagnons.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📝 NOTES & CONTACTS</h3>
+            <p>Un bloc-note avec système de tags et "épinglage" sur l'accueil. Un répertoire de contacts professionnels triables pour ne jamais perdre un numéro utile.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="badge">EN DÉVELOPPEMENT</div>
+            <h3>🗺️ GESTION DE PÂTURAGE</h3>
+            <p>Inventaire des équipements, état des logements et description des quartiers. À terme, cette section sera liée à un outil de cartographie du territoire.</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📁 DOCUMENTS & CALENDRIER</h3>
+            <p>Sauvegardez vos fiches de paie, contrats et attestations. Visualisez toute votre activité passée en un clin d'œil sur une vue calendrier (semaine/mois).</p>
+        </div>
+        
+        <div class="feature-card">
+            <h3>📣 CONTACT</h3>
+            <p>Recensez les contacts liés à votre travail : eleveurs, voisins, gestionnaires de territoires... les contact sont triable par tags.</p>
+        </div>
+        
+        <div class="feature-card">
+            <h3>📅 CALENDRIER</h3>
+            <p>Consultez l'intégralité de vos activités sur l'alpage, notez y vos repos, les visites d'amies, les chantiers à venir...</p>
+            <p>le calendrier peut etre en vue par mois ou par semaine</p>
+        </div>
+         <div class="feature-card">
+            <h3>🎉 Surprises </h3>
+            <p>des petites surprises pour passer le temps sont cachés dans l'application. Saurez vous les retrouver ?</p>
+        </div>
+    </div>
+
+    <section style="margin-top: 3rem; background: #e8f5e9; padding: 2rem; border-radius: 12px;">
+        <p><strong>Note :</strong> Pour chaque événement saisi, vous pouvez éditer a posteriori, ajouter des remarques détaillées et des photos.</p>
+        <p>La synchronisation Cloud utilise un <strong>chiffrement de bout en bout</strong> : personne d'autre que vous et votre binôme n'a accès à vos données.</p>
+        <p>Nous sommes ainsi <strong>restés particulièrement vigilant à la gestion des données</strong> sur cette appli. <strong>L'ensemble des données reste sur votre téléphone</strong>, sauf si vous choisissez de les partager en les exportant. <strong> Aucune donnée n'est donc partagée ni stockée ailleurs que sur vos téléphones ou de manière chiffrée et non consultable.</strong></p>
+    </section>
+
+    <footer>
+        <p>Le Biais</p>
+        <p>&copy; 2026 - Pensé par des bergers pour les gardien.nes de troupeaux</p>
+    </footer>
+</div>
+
+</body>
+</html>
