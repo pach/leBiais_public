@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synchronisation, sauvegardes et paramètres - Documentation du Biais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="compact">
+    <h1><a href="index.html">Le Biais</a> · Documentation</h1>
+</header>
+
+<nav class="docnav" aria-label="Chapitres de la documentation">
+    <ul>
+        <li><a href="index.html">🏠 Accueil</a></li>
+        <li><a href="premiers-pas.html">🚀 Premiers pas</a></li>
+        <li><a href="garde-chantier.html">🛡️ Garde &amp; chantier</a></li>
+        <li><a href="troupeau.html">🐏 Troupeau</a></li>
+        <li><a href="soins.html">💉 Soins</a></li>
+        <li><a href="paturage.html">🗺️ Pâturage</a></li>
+        <li><a href="notes-contacts.html">📝 Notes &amp; contacts</a></li>
+        <li><a href="suivi.html">📅 Suivi &amp; export</a></li>
+        <li><a href="outils.html">🧰 Outils</a></li>
+        <li><a href="synchronisation.html" class="current">🔄 Partage &amp; paramètres</a></li>
+    </ul>
+</nav>
+
+<div class="container doc">
+    <h1>Synchronisation, sauvegardes et paramètres</h1>
+    <p class="lead">Travailler à plusieurs sur le même projet, mettre ses données à l'abri, et régler l'application.</p>
+
+    <div class="toc">
+        <strong>Sur cette page</strong>
+        <ul>
+            <li><a href="#confidentialite">D'abord : où sont vos données ?</a></li>
+            <li><a href="#direct">Échange direct, d'un appareil à l'autre</a></li>
+            <li><a href="#cloud">Synchronisation Cloud, chiffrée de bout en bout</a></li>
+            <li><a href="#sauvegardes">Sauvegardes et importation</a></li>
+            <li><a href="#projets">Projets</a></li>
+            <li><a href="#reglages">Les autres réglages</a></li>
+            <li><a href="#apropos">À propos, bugs et idées</a></li>
+        </ul>
+    </div>
+
+    <h2 id="confidentialite">D'abord : où sont vos données ?</h2>
+    <p><strong>Sur votre appareil, et nulle part ailleurs</strong> — tant que vous n'activez pas une synchronisation. Ni compte, ni publicité, ni pistage, ni revente. Désinstaller l'application efface les données de l'appareil.</p>
+
+    <h2 id="direct">Échange direct, d'un appareil à l'autre</h2>
+    <p>Il y a deux façons de synchroniser un projet entre appareils, indépendantes l'une de l'autre : l'<strong>échange direct</strong>, décrit ici, et la <a href="#cloud">synchronisation Cloud</a>. Le choix dépend du réseau dont vous disposez sur votre quartier : sans réseau, l'échange direct fait tout le travail ; avec du réseau, le Cloud s'en charge tout seul. Rien n'empêche d'utiliser les deux selon les moments.</p>
+    <p>Dans <span class="ui">Synchronisation (Binôme)</span>, <span class="ui">Partager mes données</span> ouvre l'<strong>échange direct</strong> : les données passent d'un appareil à l'autre, sans aucun serveur ni connexion Internet.</p>
+    <ol>
+        <li>Ouvrez « Échange direct » sur les <strong>deux</strong> appareils.</li>
+        <li>Sur l'un des deux, touchez le nom de l'autre quand il apparaît.</li>
+        <li>La première fois, tapez le <strong>code à 6 chiffres</strong> affiché sur l'autre appareil. Les appareils se mémorisent ensuite.</li>
+    </ol>
+    <p>Si l'autre appareil n'apparaît pas, le dialogue propose des solutions de repli : saisir son adresse quand les deux sont sur le même réseau Wi-Fi, ou <span class="ui">Créer un réseau temporaire</span> que l'autre rejoint en scannant un code.</p>
+    <ul>
+        <li><span class="ui">Synchroniser les médias</span> inclut photos, documents et fichiers joints — plus long, à cocher quand on a le temps.</li>
+        <li>Si les deux appareils ne sont pas sur le même projet, l'application propose de basculer.</li>
+        <li><span class="ui">Oublier les appareils mémorisés</span> : le code sera redemandé au prochain échange.</li>
+    </ul>
+
+    <h2 id="cloud">Synchronisation Cloud, chiffrée de bout en bout</h2>
+    <p>Facultative. Une fois activée, les appareils du projet s'échangent leurs modifications dès qu'ils ont du réseau, sans avoir à se retrouver.</p>
+    <p>Elle a deux intérêts :</p>
+    <ul>
+        <li><strong>Une sauvegarde automatique.</strong> Dès que l'appareil capte du réseau, vos dernières saisies partent en ligne, où elles sont gardées pendant la durée de conservation choisie. En cas de perte ou de casse d'un appareil, ce qui a été envoyé pendant cette période se récupère sur un autre.</li>
+        <li><strong>Une synchronisation automatique et rapide entre binômes.</strong> Chacun reçoit les saisies de l'autre sans rien faire, en quelques instants : pas besoin d'être au même endroit ni de lancer un échange.</li>
+    </ul>
+    <p>Pour la mettre en place, cochez <span class="ui">Activer la synchronisation Cloud</span> dans les paramètres, puis invitez les autres appareils du projet. Voici comment elle fonctionne et ce qu'il y a à régler :</p>
+    <ul>
+        <li><strong>Inviter un appareil</strong> — <span class="ui">Afficher QR</span> ou <span class="ui">Partager le lien</span> (<code>lebiais://…</code>). Sur l'autre appareil : <span class="ui">Scanner pour rejoindre</span> ou <span class="ui">Coller un lien</span>.</li>
+        <li><strong>Chiffrement</strong> — les données sont chiffrées sur votre appareil (AES-256-GCM) avec une clé tirée du secret du projet, qui ne quitte jamais vos appareils. Ni nous ni l'hébergeur ne pouvons les lire ; même les noms de fichiers sont masqués.</li>
+        <li><strong>Conservation en ligne</strong> — le serveur n'est qu'un relais : chaque fichier y est effacé automatiquement après la durée choisie, de 1 à 60 jours (30 par défaut).</li>
+        <li><strong>État</strong> — les paramètres affichent le dernier passage, réussi ou non, et la liste des derniers fichiers synchronisés. L'icône 🔗 de l'accueil force une synchronisation.</li>
+        <li><span class="ui">Dissocier ce projet du Cloud</span> retire votre appareil ; le dernier appareil à partir efface toutes les données en ligne du projet.</li>
+    </ul>
+    <div class="warn"><p>Le lien d'invitation contient le secret du projet : ne le transmettez qu'aux personnes qui doivent accéder aux données. Un appareil resté hors ligne plus longtemps que la durée de conservation ne recevra pas ce qui a été effacé entre-temps — un échange direct le remet à niveau.</p></div>
+
+    <h2 id="sauvegardes">Sauvegardes et importation</h2>
+    <ul>
+        <li><span class="ui">Exporter mes données</span> — produit une <strong>archive ZIP</strong> du projet, après avoir choisi les données à y mettre. À garder en lieu sûr, ou à envoyer.</li>
+        <li><strong>Sauvegarde automatique</strong> — une sauvegarde quotidienne au démarrage de l'application, si l'option est activée. <span class="ui">Gestion des sauvegardes</span> liste et supprime les anciennes.</li>
+        <li><strong>Importer</strong> une archive, depuis un dossier du téléphone ou les sauvegardes de l'application, de deux façons : <span class="ui">Importer dans un nouveau projet</span> ou <span class="ui">Fusionner au projet existant</span>.</li>
+    </ul>
+    <div class="tip"><p>En fin de saison, une archive ZIP transmise à la personne suivante lui donne tout : quartiers, équipements, contacts, fiches maladies, historique.</p></div>
+
+    <h2 id="projets">Projets</h2>
+    <ul>
+        <li><span class="ui">Changer de paturage</span> passe d'un projet à l'autre.</li>
+        <li><span class="ui">Créer une nouvelle estive</span> ouvre un projet neuf (nom, espèces, marques).</li>
+        <li><span class="ui">Gérer les projets</span> retrouve d'anciens projets et permet d'en supprimer un — définitivement, avec ses photos et ses cartes hors ligne.</li>
+    </ul>
+    <p>On ne change pas de projet pendant une garde en cours : il faut d'abord la clôturer.</p>
+
+    <h2 id="reglages">Les autres réglages</h2>
+    <div class="table-wrap">
+    <table>
+        <tr><th>Réglage</th><th>Effet</th></tr>
+        <tr><td>Votre nom ou pseudo</td><td>Signe vos saisies.</td></tr>
+        <tr><td>Afficher la garde et le chantier en cours</td><td>Notification permanente pendant une garde ou un chantier.</td></tr>
+        <tr><td>L'agnelage modifie le compte total du troupeau</td><td>Les naissances s'ajoutent, ou non, à l'effectif théorique.</td></tr>
+        <tr><td>Soins à faire — délai de suppression automatique</td><td>Les fiches plus anciennes que ce nombre de jours sont supprimées.</td></tr>
+        <tr><td><a href="paturage.html#horsligne">Cartes hors ligne</a></td><td>Emporter les fonds de carte de vos quartiers.</td></tr>
+    </table>
+    </div>
+
+    <h2 id="apropos">À propos, bugs et idées</h2>
+    <p>L'écran <span class="ui">À propos</span> raconte les origines de l'application, détaille ce qu'elle fait de vos données et donne les mentions légales. Deux boutons y attendent vos retours :</p>
+    <ul>
+        <li><span class="ui">Signaler un bug</span> — ce que vous faisiez, ce qui s'est passé, ce que vous attendiez. Vous pouvez joindre le journal technique.</li>
+        <li><span class="ui">Proposer une idée</span>.</li>
+    </ul>
+    <p>Le signalement devient un ticket <strong>public</strong> sur <a href="https://github.com/pach/LeBiais">github.com/pach/LeBiais</a> : n'y mettez rien de personnel (le journal technique peut contenir des noms de projets, de lieux ou d'animaux). Dans les paramètres, <span class="ui">Support &amp; Debug</span> permet aussi d'exporter et de partager les journaux après un plantage.</p>
+
+    <div class="pager">
+        <span><a href="outils.html">← Outils</a></span>
+        <span><a href="index.html">Retour à l'accueil →</a></span>
+    </div>
+
+    <footer>
+        <p>Le Biais</p>
+        <p>&copy; 2026 - Pensé par des bergers pour les gardien.nes de troupeaux</p>
+    </footer>
+</div>
+
+</body>
+</html>

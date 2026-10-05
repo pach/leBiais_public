@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premiers pas - Documentation du Biais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="compact">
+    <h1><a href="index.html">Le Biais</a> · Documentation</h1>
+</header>
+
+<nav class="docnav" aria-label="Chapitres de la documentation">
+    <ul>
+        <li><a href="index.html">🏠 Accueil</a></li>
+        <li><a href="premiers-pas.html" class="current">🚀 Premiers pas</a></li>
+        <li><a href="garde-chantier.html">🛡️ Garde &amp; chantier</a></li>
+        <li><a href="troupeau.html">🐏 Troupeau</a></li>
+        <li><a href="soins.html">💉 Soins</a></li>
+        <li><a href="paturage.html">🗺️ Pâturage</a></li>
+        <li><a href="notes-contacts.html">📝 Notes &amp; contacts</a></li>
+        <li><a href="suivi.html">📅 Suivi &amp; export</a></li>
+        <li><a href="outils.html">🧰 Outils</a></li>
+        <li><a href="synchronisation.html">🔄 Partage &amp; paramètres</a></li>
+    </ul>
+</nav>
+
+<div class="container doc">
+    <h1>Premiers pas</h1>
+    <p class="lead">Créer ou rejoindre un projet, déclarer ses marques, et se repérer sur l'écran d'accueil.</p>
+
+    <div class="toc">
+        <strong>Sur cette page</strong>
+        <ul>
+            <li><a href="#projet">Un projet = un pâturage</a></li>
+            <li><a href="#especes">Espèces et marques</a></li>
+            <li><a href="#accueil">L'écran d'accueil</a></li>
+            <li><a href="#principes">Quelques principes valables partout</a></li>
+            <li><a href="#ecrans">Téléphone, tablette, poste de bureau</a></li>
+        </ul>
+    </div>
+
+    <h2 id="projet">Un projet = un pâturage</h2>
+    <p>Tout ce que vous saisissez est rangé dans un <strong>projet</strong> : une estive, une colline, une plaine… Un même appareil peut porter plusieurs projets et passer de l'un à l'autre depuis les <a href="synchronisation.html#projets">paramètres</a>.</p>
+    <p>Au premier lancement, l'écran <span class="ui">Bienvenue sur Le Biais</span> demande votre nom (ou pseudo), puis propose deux chemins :</p>
+    <ul>
+        <li><span class="ui">Créer un nouveau projet</span> — vous donnez un nom au projet, et vous le remplissez vous-même.</li>
+        <li><span class="ui">Rejoindre un projet partagé</span> — vous collez le lien <code>lebiais://…</code> reçu de votre binôme, ou vous touchez <span class="ui">Scanner le code QR</span>. Le nom du projet, ses espèces et ses marques arrivent alors des autres appareils.</li>
+    </ul>
+    <div class="tip"><p>Votre nom sert à signer vos saisies : c'est lui qui distingue vos heures et vos repos de ceux de votre binôme dans les statistiques.</p></div>
+
+    <h2 id="especes">Espèces et marques</h2>
+    <p>À la création d'un projet, deux écrans s'enchaînent :</p>
+    <ol>
+        <li><strong>Précision des races</strong> — brebis, chèvre, vache ou une autre espèce que vous nommez. Ce choix règle les catégories d'animaux proposées ensuite (brebis / agneau / bélier, chèvre / chevreau / bouc, vache / veau / génisse / taureau).</li>
+        <li><strong>Gestion des marques</strong> — pour chaque marque présente dans le troupeau : son nom ou marquage (facultatif), son propriétaire, et un ou plusieurs numéros d'exploitation. Il faut au moins une marque pour continuer.</li>
+    </ol>
+    <p>Les marques se complètent ou se corrigent à tout moment depuis <a href="troupeau.html#marques">Troupeau</a>.</p>
+
+    <h2 id="accueil">L'écran d'accueil</h2>
+    <p>L'accueil rassemble ce qui compte aujourd'hui, puis donne accès à tout le reste.</p>
+    <ul>
+        <li><strong>En cours</strong> — une garde ou un chantier ouvert s'affiche en tête ; un appui y ramène.</li>
+        <li><strong>À venir</strong> — les prochains événements et repos du <a href="suivi.html#calendrier">calendrier</a>.</li>
+        <li><strong>Notes épinglées</strong> — les notes (et notes de chiens) marquées « Épingler sur l'accueil ».</li>
+        <li><strong>État de la synchronisation</strong> — quand le Cloud est activé : 🔗 si tout est à jour, ⛓️‍💥 s'il reste des changements à envoyer ou si le dernier passage a échoué. Un appui force une synchronisation.</li>
+        <li><strong>⚙️</strong> ouvre les <a href="synchronisation.html">paramètres</a> ; le numéro de version est affiché à côté.</li>
+    </ul>
+    <div class="table-wrap">
+    <table>
+        <tr><th>Bouton</th><th>Ce qu'on y fait</th></tr>
+        <tr><td><a href="garde-chantier.html#garde">GARDE</a></td><td>Pointer une journée de garde : horaires, événements, quartiers, météo, parcours.</td></tr>
+        <tr><td><a href="troupeau.html">TROUPEAU</a></td><td>Effectifs, marques, arrivées, départs, décès, comptages, naissances, chiens.</td></tr>
+        <tr><td><a href="garde-chantier.html#chantier">CHANTIER</a></td><td>Compter les heures hors garde : soins, parcs, filets, aménagements.</td></tr>
+        <tr><td><a href="paturage.html">PATURAGE</a></td><td>Quartiers, équipements, ressources et carte.</td></tr>
+        <tr><td><a href="soins.html">SOINS</a></td><td>Saisir un soin, suivre les rappels, tenir la pharmacie et le carnet.</td></tr>
+        <tr><td><a href="notes-contacts.html#notes">NOTES</a></td><td>Bloc-notes et listes à cocher, triés par tags.</td></tr>
+        <tr><td><a href="outils.html">OUTILS</a></td><td>Compteur, odomètre, bêtes remarquables.</td></tr>
+        <tr><td><a href="suivi.html#historique">HISTORIQUE COMPLET</a></td><td>Tout ce qui a été saisi, filtrable.</td></tr>
+        <tr><td><a href="suivi.html#calendrier">VUE CALENDRIER</a></td><td>La saison jour par jour, les repos, les rendez-vous.</td></tr>
+        <tr><td><a href="suivi.html#statistiques">STATISTIQUES</a></td><td>Repos, heures, soins, quartiers, et l'export PDF.</td></tr>
+        <tr><td><a href="notes-contacts.html#contacts">FICHE CONTACTS</a></td><td>L'annuaire du projet.</td></tr>
+        <tr><td><a href="notes-contacts.html#documents">DOCUMENTS</a></td><td>Contrats, fiches de paie, constats…</td></tr>
+        <tr><td><a href="notes-contacts.html#utiles">CONTACTS UTILES &amp; INFOS BERGER.ES</a></td><td>Associations, syndicat, ligne d'écoute, groupes Signal.</td></tr>
+        <tr><td><a href="synchronisation.html#apropos">À PROPOS</a></td><td>Origines, données, mentions légales, signaler un bug ou une idée.</td></tr>
+    </table>
+    </div>
+
+    <h2 id="principes">Quelques principes valables partout</h2>
+    <ul>
+        <li><strong>Tout se corrige après coup.</strong> Chaque saisie peut être rouverte, complétée par des remarques et des photos, ou supprimée.</li>
+        <li><strong>Photos.</strong> La plupart des formulaires proposent <span class="ui">📷 Photo</span> (appareil photo) et <span class="ui">🖼️ Galerie</span>.</li>
+        <li><strong>Chacun ses sessions.</strong> Une garde ou un chantier créé par quelqu'un d'autre se consulte, mais ne se modifie pas depuis votre appareil.</li>
+        <li><strong>Pas besoin de réseau.</strong> Tout fonctionne hors connexion ; le réseau ne sert qu'à la synchronisation Cloud et au chargement des fonds de carte.</li>
+    </ul>
+
+    <h2 id="ecrans">Téléphone, tablette, poste de bureau</h2>
+    <p>L'application tourne sur téléphone Android, et existe aussi en version poste de bureau (macOS, Windows, Linux) pour reprendre ses données au chaud. Sur un grand écran, les pages se déplient en <strong>volets</strong> : la liste à gauche, la fiche à droite, un menu latéral à la place des boutons de l'accueil. Les fonctions sont les mêmes ; cette documentation signale par <span class="tag">Android seul</span> ce qui n'existe que sur téléphone.</p>
+
+    <div class="pager">
+        <span><a href="index.html">← Accueil</a></span>
+        <span><a href="garde-chantier.html">Garde et chantier →</a></span>
+    </div>
+
+    <footer>
+        <p>Le Biais</p>
+        <p>&copy; 2026 - Pensé par des bergers pour les gardien.nes de troupeaux</p>
+    </footer>
+</div>
+
+</body>
+</html>

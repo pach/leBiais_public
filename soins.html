@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soins - Documentation du Biais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="compact">
+    <h1><a href="index.html">Le Biais</a> · Documentation</h1>
+</header>
+
+<nav class="docnav" aria-label="Chapitres de la documentation">
+    <ul>
+        <li><a href="index.html">🏠 Accueil</a></li>
+        <li><a href="premiers-pas.html">🚀 Premiers pas</a></li>
+        <li><a href="garde-chantier.html">🛡️ Garde &amp; chantier</a></li>
+        <li><a href="troupeau.html">🐏 Troupeau</a></li>
+        <li><a href="soins.html" class="current">💉 Soins</a></li>
+        <li><a href="paturage.html">🗺️ Pâturage</a></li>
+        <li><a href="notes-contacts.html">📝 Notes &amp; contacts</a></li>
+        <li><a href="suivi.html">📅 Suivi &amp; export</a></li>
+        <li><a href="outils.html">🧰 Outils</a></li>
+        <li><a href="synchronisation.html">🔄 Partage &amp; paramètres</a></li>
+    </ul>
+</nav>
+
+<div class="container doc">
+    <h1>Soins</h1>
+    <p class="lead">Saisir vite, retrouver facilement : le carnet de soins, les rappels, l'infirmerie et la pharmacie.</p>
+
+    <div class="toc">
+        <strong>Sur cette page</strong>
+        <ul>
+            <li><a href="#saisir">Saisir un soin</a></li>
+            <li><a href="#afaire">Soins à faire</a></li>
+            <li><a href="#rappels">Rappels</a></li>
+            <li><a href="#infirmerie">Parc infirmerie</a></li>
+            <li><a href="#carnet">Carnet de soins</a></li>
+            <li><a href="#fiches">Fiches maladies</a></li>
+            <li><a href="#pharmacie">Pharmacie</a></li>
+        </ul>
+    </div>
+
+    <h2 id="saisir">Saisir un soin</h2>
+    <p><span class="ui">➕ Saisir un soin</span> ouvre un formulaire qui se remplit de haut en bas :</p>
+    <ol>
+        <li><strong>L'animal</strong> — marque, numéro de boucle, catégorie (brebis, agneau, bélier…), caractéristiques, et un <em>marquage spécifique</em> (le trait de bori posé pour retrouver l'animal). Les marquages les plus utilisés se rangent dans une liste de <span class="ui">Marquages pré-remplis</span>.</li>
+        <li><strong>La nature du soin</strong> — choisie parmi les catégories de pathologies : Pieds et boiteries, Peau et plaie, Problèmes respiratoires, Yeux, Mamelle, Autre. Depuis cette liste, on peut consulter la <a href="#fiches">fiche maladie</a> correspondante, ou enregistrer une nouvelle pathologie pour la prochaine fois.</li>
+        <li><strong>La localisation</strong> — les pieds concernés (AVG, AVD, ARG, ARD), ou un point posé sur un <strong>schéma de l'animal</strong> (vue droite, gauche, face, dessus). L'application rattache le point à la zone la plus proche et affiche son nom.</li>
+        <li><strong>Ce qui a été fait</strong> — en texte libre.</li>
+        <li><strong>Piqûre</strong> — le produit, pris dans la <a href="#pharmacie">pharmacie</a>, la quantité en cc, et un rappel de piqûre (1, 2 ou 3 jours).</li>
+        <li><strong>Suivi nécessaire ?</strong> — programme un rappel de suivi à 1, 2, 3 ou 5 jours.</li>
+        <li><strong>Mise en infirmerie ?</strong> — place la bête au parc infirmerie.</li>
+        <li><strong>Photos.</strong></li>
+    </ol>
+    <p><span class="ui">+ Ajouter un autre soin pour cette bête</span> enchaîne plusieurs soins sur le même animal sans ressaisir son identité.</p>
+
+    <h2 id="afaire">Soins à faire</h2>
+    <p>Une bête repérée en garde, qu'on ne peut pas attraper tout de suite ? <span class="ui">Ajouter un soin à faire</span> note la marque, la boucle si on l'a, une description de l'animal, ce qu'il faudra faire, et une photo.</p>
+    <p>Les fiches trop anciennes sont supprimées automatiquement, après un délai réglable dans les paramètres (<span class="ui">Soins à faire</span>).</p>
+
+    <h2 id="rappels">Rappels</h2>
+    <ul>
+        <li><strong>Rappels piqûres</strong> — nés d'un produit qui demande un rappel, ou du choix fait à la saisie.</li>
+        <li><strong>Rappels suivi</strong> — nés de « Suivi nécessaire ».</li>
+    </ul>
+    <p>Ils apparaissent dans l'écran Soins et dans le <a href="suivi.html#calendrier">calendrier</a>. <span class="ui">Marquer comme Fait</span> ouvre un nouveau soin déjà rempli avec l'animal et le soin précédent ; l'enregistrer solde le rappel.</p>
+
+    <h2 id="infirmerie">Parc infirmerie</h2>
+    <p>La liste des pensionnaires, avec leur motif. Une bête peut y entrer par un soin, par une naissance, ou directement (<span class="ui">Placer au parc infirmerie</span>). Depuis sa fiche : <span class="ui">Voir son carnet</span> et <span class="ui">Sortir du parc</span>.</p>
+
+    <h2 id="carnet">Carnet de soins</h2>
+    <p><span class="ui">Consulter le carnet de soins</span> présente tous les soins en registre. Les filtres se combinent : période, marques, catégories de pathologie, numéro de boucle, catégorie d'animal, personne qui a soigné, et recherche libre. Chaque ligne s'ouvre pour être relue ou modifiée.</p>
+    <p><span class="ui">📤 Exporter le carnet de soins</span> produit, pour une période, des marques et des catégories choisies, un fichier <strong>PDF</strong> ou <strong>TXT</strong> : récapitulatif par pathologie, marques et numéros d'exploitation, puis liste chronologique détaillée. De quoi transmettre à chaque éleveur ce qui concerne ses bêtes.</p>
+    <p>L'<a href="suivi.html#export">export général</a> propose en plus des fiches récapitulatives des soins par marque.</p>
+
+    <h2 id="fiches">Fiches maladies</h2>
+    <p>Un aide-mémoire que vous construisez : pour chaque pathologie, sa catégorie, la cause, ce qu'on observe, ce qu'on fait, une remarque et des photos d'illustration. Précieux pour la personne qui prend le relais.</p>
+
+    <h2 id="pharmacie">Pharmacie</h2>
+    <p>L'inventaire des produits : nom, type (antibiotique, anti-inflammatoire, huile essentielle, poudre, autre), date d'ouverture, stock, remarques. Deux cases comptent pour la saisie des soins :</p>
+    <ul>
+        <li><strong>Produit injectable (💉)</strong> — le produit est proposé à l'étape « piqûre » ;</li>
+        <li><strong>Nécessite un rappel de piqûre</strong>, avec son délai en jours — le rappel se crée tout seul.</li>
+    </ul>
+    <p>Un produit dont le stock est à zéro est signalé « en rupture ».</p>
+
+    <div class="pager">
+        <span><a href="troupeau.html">← Troupeau</a></span>
+        <span><a href="paturage.html">Pâturage et carte →</a></span>
+    </div>
+
+    <footer>
+        <p>Le Biais</p>
+        <p>&copy; 2026 - Pensé par des bergers pour les gardien.nes de troupeaux</p>
+    </footer>
+</div>
+
+</body>
+</html>

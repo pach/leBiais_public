@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garde et chantier - Documentation du Biais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="compact">
+    <h1><a href="index.html">Le Biais</a> · Documentation</h1>
+</header>
+
+<nav class="docnav" aria-label="Chapitres de la documentation">
+    <ul>
+        <li><a href="index.html">🏠 Accueil</a></li>
+        <li><a href="premiers-pas.html">🚀 Premiers pas</a></li>
+        <li><a href="garde-chantier.html" class="current">🛡️ Garde &amp; chantier</a></li>
+        <li><a href="troupeau.html">🐏 Troupeau</a></li>
+        <li><a href="soins.html">💉 Soins</a></li>
+        <li><a href="paturage.html">🗺️ Pâturage</a></li>
+        <li><a href="notes-contacts.html">📝 Notes &amp; contacts</a></li>
+        <li><a href="suivi.html">📅 Suivi &amp; export</a></li>
+        <li><a href="outils.html">🧰 Outils</a></li>
+        <li><a href="synchronisation.html">🔄 Partage &amp; paramètres</a></li>
+    </ul>
+</nav>
+
+<div class="container doc">
+    <h1>Garde et chantier</h1>
+    <p class="lead">Pointer ses heures de travail : la garde au fil de la journée, et tout ce qui n'est pas de la garde.</p>
+
+    <div class="toc">
+        <strong>Sur cette page</strong>
+        <ul>
+            <li><a href="#garde">Garde</a></li>
+            <li><a href="#chantier">Chantier</a></li>
+            <li><a href="#heures">Comment les heures sont comptées</a></li>
+        </ul>
+    </div>
+
+    <h2 id="garde">Garde</h2>
+    <p>Une <strong>session de garde</strong> est une journée (ou une demi-journée) auprès du troupeau. Elle a une heure de début, une heure de fin, et une suite d'<strong>événements</strong> horodatés.</p>
+
+    <h3 id="garde-demarrer">Démarrer</h3>
+    <p>Touchez <span class="ui">▶ Je pars en garde</span> : l'heure de début est prise, modifiable. Tant que la session est ouverte, l'accueil affiche <span class="ui">Garde en cours</span> et, si l'option est activée dans les paramètres, une notification permanente la rappelle.</p>
+
+    <h3 id="garde-evenements">Les événements</h3>
+    <p>Pendant la garde, un bouton par moment clé :</p>
+    <div class="table-wrap">
+    <table>
+        <tr><th>Événement</th><th>À quoi il sert</th></tr>
+        <tr><td>Départ couchade</td><td>Le troupeau quitte la couchade : le temps de parcours commence.</td></tr>
+        <tr><td>Mise en chôme / Sortie de chôme</td><td>Encadrent la chôme. L'accueil indique alors « Garde en cours - CHÔME ».</td></tr>
+        <tr><td>Retour couchade</td><td>Fin du parcours.</td></tr>
+        <tr><td>Mise en parc / Sortie de parc</td><td>Pour les conduites en parc.</td></tr>
+        <tr><td>Relai binôme</td><td>Le moment où l'on passe la main.</td></tr>
+        <tr><td>Note de garde</td><td>Une remarque libre, à l'heure qu'il est.</td></tr>
+    </table>
+    </div>
+    <p>Chaque événement peut porter :</p>
+    <ul>
+        <li>la <strong>météo</strong>, en icônes rapides (☀️ 🌤️ ☁️ 🌧️ ⛈️ 🥵 💨 🌪️ ❄️…) ;</li>
+        <li>le mode de conduite, <strong>en libre</strong> ou <strong>en parc</strong> ;</li>
+        <li>les <strong>quartiers et sous-quartiers pâturés</strong> — choisis dans un menu, désignés sur la carte, ou créés sur place (<span class="ui">+ Ajouter un quartier</span>) ;</li>
+        <li>le <strong>parcours du jour</strong>, dessiné au doigt sur la carte (plusieurs tracés si le troupeau est en plusieurs lots) ;</li>
+        <li>des remarques et des photos.</li>
+    </ul>
+
+    <h3 id="garde-raccourcis">Sans quitter la garde</h3>
+    <p>L'écran de garde donne un accès direct à ce qu'on note le plus souvent en marchant : <a href="soins.html#afaire"><span class="ui">📋 Observation d'un soin à faire</span></a>, <a href="troupeau.html#egarees"><span class="ui">Bêtes Égarées</span></a>, <a href="troupeau.html#mouvements"><span class="ui">Déclarer Décès</span></a>, <a href="troupeau.html#remarquables"><span class="ui">Bêtes Remarquables</span></a> et <a href="troupeau.html#chiens"><span class="ui">Chiens de Travail</span></a>.</p>
+
+    <h3 id="garde-cloturer">Clôturer et relire</h3>
+    <p><span class="ui">Clôturer</span> ouvre le <strong>résumé de la garde</strong> : date, début, fin, liste des événements. Tout y reste modifiable — on peut ajouter un événement oublié, corriger une heure, supprimer la session.</p>
+    <p>La liste des gardes se parcourt par mois et se filtre par une recherche (date, quartier…). Sur grand écran, une <strong>barre du temps</strong> place les événements de la journée sur un axe. <span class="ui">🗺️ Voir le parcours sur la carte</span> rouvre le tracé d'une garde.</p>
+
+    <h3 id="garde-rattrapage">Rattraper des journées</h3>
+    <ul>
+        <li><span class="ui">+ Nouvelle session de garde</span> — saisir après coup une garde à la date voulue.</li>
+        <li><span class="ui">Rattraper des sessions</span> — créer un <strong>lot</strong> de gardes d'un coup : date de début, date de fin, heures, et des événements par défaut repris chaque jour. Pratique après une semaine sans avoir sorti le téléphone.</li>
+        <li><strong>Copier / coller les événements</strong> — depuis une garde, copiez ses événements puis collez-les dans une autre ; les événements déjà présents sont conservés.</li>
+    </ul>
+
+    <h2 id="chantier">Chantier</h2>
+    <p>Le chantier compte les heures de tout ce qui n'est pas de la garde : soins, pédiluve, tri, pose de filets, aménagements…</p>
+    <ol>
+        <li><span class="ui">Commencer un chantier</span> : heure de début, un ou plusieurs <strong>types de chantier</strong> (la liste s'enrichit avec <span class="ui">Autre type</span>), remarques générales.</li>
+        <li>Pendant le chantier, ajoutez des <strong>notes de chantier</strong> horodatées, avec photos.</li>
+        <li><span class="ui">Terminer le chantier</span> fixe l'heure de fin.</li>
+    </ol>
+    <p>Les <strong>soins saisis pendant un chantier</strong> s'affichent dans son résumé : on voit d'un coup ce qui a été fait ce jour-là. Comme pour la garde, un chantier peut être créé après coup, modifié ou supprimé.</p>
+
+    <h2 id="heures">Comment les heures sont comptées</h2>
+    <p>Les <a href="suivi.html#statistiques">statistiques</a> distinguent :</p>
+    <ul>
+        <li>les <strong>heures de garde</strong> — du début à la fin de chaque session ;</li>
+        <li>les <strong>heures de parcours</strong> — le temps où le troupeau pâture, déduit des événements : du départ de couchade au retour, chôme déduite (le temps en parc compte, le troupeau y pâture encore) ;</li>
+        <li>les <strong>heures de chantier</strong> ;</li>
+        <li>le <strong>total réel travaillé</strong> — l'union des gardes et des chantiers : une heure de chantier faite pendant une garde n'est pas comptée deux fois ;</li>
+        <li>le <strong>total cumulé</strong> — garde + chantier, simple addition.</li>
+    </ul>
+    <div class="tip"><p>Pointer au fil de l'eau, c'est ce qui donne des fiches horaires solides en fin de saison — et de quoi discuter chiffres en main en cas de désaccord avec l'employeur.</p></div>
+
+    <div class="pager">
+        <span><a href="premiers-pas.html">← Premiers pas</a></span>
+        <span><a href="troupeau.html">Troupeau →</a></span>
+    </div>
+
+    <footer>
+        <p>Le Biais</p>
+        <p>&copy; 2026 - Pensé par des bergers pour les gardien.nes de troupeaux</p>
+    </footer>
+</div>
+
+</body>
+</html>

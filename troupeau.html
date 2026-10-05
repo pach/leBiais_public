@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Troupeau - Documentation du Biais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="compact">
+    <h1><a href="index.html">Le Biais</a> · Documentation</h1>
+</header>
+
+<nav class="docnav" aria-label="Chapitres de la documentation">
+    <ul>
+        <li><a href="index.html">🏠 Accueil</a></li>
+        <li><a href="premiers-pas.html">🚀 Premiers pas</a></li>
+        <li><a href="garde-chantier.html">🛡️ Garde &amp; chantier</a></li>
+        <li><a href="troupeau.html" class="current">🐏 Troupeau</a></li>
+        <li><a href="soins.html">💉 Soins</a></li>
+        <li><a href="paturage.html">🗺️ Pâturage</a></li>
+        <li><a href="notes-contacts.html">📝 Notes &amp; contacts</a></li>
+        <li><a href="suivi.html">📅 Suivi &amp; export</a></li>
+        <li><a href="outils.html">🧰 Outils</a></li>
+        <li><a href="synchronisation.html">🔄 Partage &amp; paramètres</a></li>
+    </ul>
+</nav>
+
+<div class="container doc">
+    <h1>Troupeau</h1>
+    <p class="lead">Savoir combien de bêtes sont là, à qui elles sont, et garder la trace de chaque entrée et sortie.</p>
+
+    <div class="toc">
+        <strong>Sur cette page</strong>
+        <ul>
+            <li><a href="#effectif">L'effectif : manuel et théorique</a></li>
+            <li><a href="#marques">Les marques</a></li>
+            <li><a href="#mouvements">Arrivées, départs, décès</a></li>
+            <li><a href="#comptage">Comptage</a></li>
+            <li><a href="#naissances">Naissances</a></li>
+            <li><a href="#egarees">Bêtes égarées / malades</a></li>
+            <li><a href="#remarquables">Bêtes remarquables</a></li>
+            <li><a href="#chiens">Chiens de travail</a></li>
+        </ul>
+    </div>
+
+    <h2 id="effectif">L'effectif : manuel et théorique</h2>
+    <p>En tête de l'écran, le <strong>total sur l'alpage</strong> s'affiche sous deux formes :</p>
+    <ul>
+        <li>le <strong>théorique</strong>, calculé par l'application : arrivées − départs − décès (et les naissances, si l'option est activée) ;</li>
+        <li>le <strong>manuel</strong>, votre dernier comptage, avec sa date.</li>
+    </ul>
+    <p>L'écart entre les deux, c'est ce qu'il faut aller chercher.</p>
+
+    <h2 id="marques">Les marques</h2>
+    <p>Chaque marque a un nom ou marquage (facultatif), un propriétaire, et un ou plusieurs <strong>numéros d'exploitation</strong>. La liste se trie par nombre de bêtes ou par propriétaire et affiche l'effectif présent de chacune. Une marque ne peut être supprimée que s'il n'en reste aucune bête sur l'alpage.</p>
+
+    <h2 id="mouvements">Arrivées, départs, décès</h2>
+    <ul>
+        <li><span class="ui">Arrivée de bétail</span> et <span class="ui">Départ de bétail</span> — marque, nombre total (obligatoire), détail facultatif par catégorie (brebis, agneaux, béliers…), remarques.</li>
+        <li><span class="ui">Décès</span> — cause (prédation, chute de pierre, dérochement, maladie, vieillesse, foudre, raison inconnue, autre), nombre de bêtes, puis pour chaque animal : marque, numéro d'exploitation, numéro de boucle, remarques, photos. Le <strong>lieu du décès</strong> se désigne sur la carte.</li>
+    </ul>
+    <p><span class="ui">Historique des mouvements</span> liste tout, filtrable, avec l'effectif théorique à chaque date. Il s'exporte en <strong>PDF</strong> (relevé de troupeau : total présent, détail par marque, bilan arrivées / départs / décès).</p>
+    <p><span class="ui">Nécrologie</span> regroupe les décès, filtrables par marque et par cause, avec le point GPS et les photos — de quoi préparer un constat.</p>
+
+    <h2 id="comptage">Comptage</h2>
+    <p><span class="ui">Saisir un comptage</span> enregistre le nombre de bêtes comptées et une remarque (conditions, détail par lot…). Le <a href="outils.html#compteur">compteur</a> des outils peut enregistrer directement son total comme comptage.</p>
+
+    <h2 id="naissances">Naissances</h2>
+    <p><span class="ui">Gestion des naissances</span> (aussi accessible depuis les soins) tient une fiche par mise bas :</p>
+    <ul>
+        <li><span class="ui">🐣 Ajouter naissance</span> ou <span class="ui">👼 Ajouter avorton</span> ;</li>
+        <li>la <strong>mère</strong> : espèce, marque, boucle, caractéristiques, marquage spécifique, photo ;</li>
+        <li>chaque <strong>petit</strong> : sexe, statut (vivant / mort), caractéristique, marquage, remarque, photo ;</li>
+        <li><span class="ui">🏥 Mettre en parc infirmerie</span> place la mère à l'<a href="soins.html#infirmerie">infirmerie</a> ;</li>
+        <li><strong>Redescendue</strong> : déclarer qu'une naissance a quitté l'alpage. L'application crée la fiche de départ et ajuste le compte quand il le faut.</li>
+    </ul>
+    <div class="tip"><p>L'option « L'agnelage modifie le compte total du troupeau » (paramètres) décide si les naissances s'ajoutent à l'effectif théorique.</p></div>
+
+    <h2 id="egarees">Bêtes égarées / malades</h2>
+    <p><span class="ui">Déclarer</span> une bête égarée : marque, boucle si connue, caractéristiques, remarques, photos, et une première observation (date, lieu). Ensuite :</p>
+    <ul>
+        <li><span class="ui">👁️ Observer</span> ajoute une observation à chaque fois qu'elle est revue ;</li>
+        <li><span class="ui">Rejoint troupeau</span> clôt la fiche — <span class="ui">Remettre Égarée</span> la rouvre.</li>
+    </ul>
+
+    <h2 id="remarquables">Bêtes remarquables</h2>
+    <p>Les bêtes qu'on reconnaît de loin servent de repères : si elles sont toutes là, le troupeau a de bonnes chances d'être complet. Chaque fiche porte l'éleveur, le type, un nom, la boucle, la race, les signes distinctifs, des photos et le <strong>nombre présent</strong>.</p>
+    <p>En tournée, on <strong>pointe</strong> les bêtes vues ; le compteur « vues / présentes » avance, et <span class="ui">Reset vus</span> remet le pointage à zéro pour la tournée suivante.</p>
+
+    <h2 id="chiens">Chiens de travail</h2>
+    <ul>
+        <li><strong>Fiche chien</strong> — nom, propriétaire, type (protection, conduite, autre), race, remarques, photos.</li>
+        <li><strong>Notes &amp; suivi</strong> — des notes datées liées à un ou plusieurs chiens, avec tags et photos : soins, comportement, chaleurs, travail… Une note peut être épinglée sur l'accueil et apparaît dans le calendrier.</li>
+    </ul>
+
+    <div class="pager">
+        <span><a href="garde-chantier.html">← Garde et chantier</a></span>
+        <span><a href="soins.html">Soins →</a></span>
+    </div>
+
+    <footer>
+        <p>Le Biais</p>
+        <p>&copy; 2026 - Pensé par des bergers pour les gardien.nes de troupeaux</p>
+    </footer>
+</div>
+
+</body>
+</html>

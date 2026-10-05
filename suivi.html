@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier, historique, statistiques et export - Documentation du Biais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="compact">
+    <h1><a href="index.html">Le Biais</a> · Documentation</h1>
+</header>
+
+<nav class="docnav" aria-label="Chapitres de la documentation">
+    <ul>
+        <li><a href="index.html">🏠 Accueil</a></li>
+        <li><a href="premiers-pas.html">🚀 Premiers pas</a></li>
+        <li><a href="garde-chantier.html">🛡️ Garde &amp; chantier</a></li>
+        <li><a href="troupeau.html">🐏 Troupeau</a></li>
+        <li><a href="soins.html">💉 Soins</a></li>
+        <li><a href="paturage.html">🗺️ Pâturage</a></li>
+        <li><a href="notes-contacts.html">📝 Notes &amp; contacts</a></li>
+        <li><a href="suivi.html" class="current">📅 Suivi &amp; export</a></li>
+        <li><a href="outils.html">🧰 Outils</a></li>
+        <li><a href="synchronisation.html">🔄 Partage &amp; paramètres</a></li>
+    </ul>
+</nav>
+
+<div class="container doc">
+    <h1>Calendrier, historique, statistiques et export</h1>
+    <p class="lead">Relire la saison : jour par jour, en chiffres, ou sur papier.</p>
+
+    <div class="toc">
+        <strong>Sur cette page</strong>
+        <ul>
+            <li><a href="#calendrier">Calendrier</a></li>
+            <li><a href="#historique">Historique complet</a></li>
+            <li><a href="#statistiques">Statistiques</a></li>
+            <li><a href="#export">Export PDF</a></li>
+        </ul>
+    </div>
+
+    <h2 id="calendrier">Calendrier</h2>
+    <p>Deux vues, au choix : par <strong>mois</strong> (une grille où chaque jour porte ses pictogrammes) ou par <strong>semaine</strong> (un agenda heure par heure avec les sessions de garde et de chantier).</p>
+    <p>Le calendrier réunit tout ce que l'application sait d'une journée :</p>
+    <ul>
+        <li>les gardes et chantiers, avec le total d'heures du jour ;</li>
+        <li>les soins effectués et les <a href="soins.html#rappels">rappels</a> de piqûre et de suivi ;</li>
+        <li>les naissances et avortements ;</li>
+        <li>les mouvements du troupeau (arrivées, départs, décès) ;</li>
+        <li>les notes de chiens ;</li>
+        <li>vos événements et vos repos.</li>
+    </ul>
+    <p>Un appui sur un jour en donne le détail ; chaque ligne mène à la saisie d'origine.</p>
+
+    <h3 id="calendrier-evenements">Événements et repos</h3>
+    <ul>
+        <li><span class="ui">+ Ajouter Événement</span> — un nom, une date (et une date de fin si besoin), des heures, des tags colorés, et un <strong>rappel</strong> : 1, 3, 5 jours ou 1 semaine avant. Visite d'ami.es, héliportage, descente, passage du véto…</li>
+        <li><span class="ui">Ajouter Repos</span> — un jour de repos, au nom de la personne concernée. Les repos alimentent les statistiques et les fiches horaires.</li>
+    </ul>
+
+    <h2 id="historique">Historique complet</h2>
+    <p>Le fil de tout ce qui a été saisi, du plus récent au plus ancien : gardes, chantiers, soins, mouvements, comptages, naissances, bêtes égarées…</p>
+    <p><span class="ui">🔍 Filtres &amp; Recherche</span> combine : types d'activité, utilisateur, texte libre, et — pour les bêtes — marque, numéro de boucle, catégorie d'animal. Chaque entrée s'ouvre et se modifie (<span class="ui">✏️ Modifier</span>). Sur grand écran, l'historique devient un registre en colonnes, avec filtre par dates et résumé.</p>
+
+    <h2 id="statistiques">Statistiques</h2>
+    <p>On choisit une <strong>période</strong> (début, fin), puis un onglet. Deux affichages : <span class="ui">Par Utilisateur</span> ou <span class="ui">Somme Globale</span>.</p>
+    <div class="table-wrap">
+    <table>
+        <tr><th>Onglet</th><th>Ce qu'il montre</th></tr>
+        <tr><td>Repos</td><td>Par personne : jours de repos pris, à prendre (déjà posés dans le calendrier), total.</td></tr>
+        <tr><td>Heures</td><td>Heures de garde, de parcours, de chantier, total réel travaillé et total cumulé (<a href="garde-chantier.html#heures">définitions</a>), avec trois moyennes.</td></tr>
+        <tr><td>Soins</td><td>Nombre de soins par catégorie et par pathologie, puis par marque : soins, bêtes soignées, part du troupeau.</td></tr>
+        <tr><td>Quartiers</td><td>Le temps passé sur chaque quartier et sous-quartier, et la <a href="paturage.html#carte-relecture">relecture de la saison</a> sur la carte.</td></tr>
+        <tr><td>Export</td><td>La fabrication des documents PDF (ci-dessous).</td></tr>
+    </table>
+    </div>
+    <h3 id="moyennes">Les trois moyennes d'heures</h3>
+    <ul>
+        <li><strong>Moyenne par jour</strong> — total divisé par le nombre de jours travaillés (jours avec une garde ou un chantier, hors repos).</li>
+        <li><strong>Moyenne par semaine, repos exclus</strong> — total divisé par les jours de la saison (du premier au dernier jour travaillé) moins les jours de repos, multiplié par 7.</li>
+        <li><strong>Moyenne par semaine sur la saison</strong> — total divisé par tous les jours de la saison, repos compris, multiplié par 7.</li>
+    </ul>
+
+    <h2 id="export">Export PDF</h2>
+    <p>L'onglet <span class="ui">Export</span> des statistiques produit, pour la période choisie, les documents à remettre ou à garder :</p>
+    <div class="table-wrap">
+    <table>
+        <tr><th>Section</th><th>Contenu</th></tr>
+        <tr><td>Fiches horaires</td><td>Semaine par semaine et par personne : heures de chaque jour, totaux, repos signalés.</td></tr>
+        <tr><td>Carnet de bord</td><td>Chaque journée : frise du temps, événements numérotés, météo, quartiers pâturés, soins, naissances, mouvements, notes.</td></tr>
+        <tr><td>Carnet de soins</td><td>Tous les soins et naissances de la période, en détail.</td></tr>
+        <tr><td>Fiches récapitulatives des soins par marque</td><td>Un tableau par éleveur : boucle, soins effectués, produit injecté.</td></tr>
+        <tr><td>Mouvement de bêtes</td><td>Arrivées, départs, décès, et le bilan : effectif en début et en fin de période.</td></tr>
+        <tr><td>Carnet de pâturage</td><td>Par quartier : pâturage prévu, pâturage réalisé, notes, équipements et toponymes.</td></tr>
+    </table>
+    </div>
+    <p><span class="ui">Configurer l'export</span> règle :</p>
+    <ul>
+        <li>les sections retenues et leur <strong>ordre</strong> ;</li>
+        <li><strong>un seul fichier</strong> regroupant tout, ou un fichier par section ;</li>
+        <li>le <strong>dossier</strong> d'enregistrement (par défaut <em>Documents/Le Biais</em>) ;</li>
+        <li>s'il faut proposer le <strong>partage</strong> (courriel, messagerie…) aussitôt l'export terminé.</li>
+    </ul>
+
+    <div class="pager">
+        <span><a href="notes-contacts.html">← Notes, documents et contacts</a></span>
+        <span><a href="outils.html">Outils →</a></span>
+    </div>
+
+    <footer>
+        <p>Le Biais</p>
+        <p>&copy; 2026 - Pensé par des bergers pour les gardien.nes de troupeaux</p>
+    </footer>
+</div>
+
+</body>
+</html>
