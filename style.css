@@ -184,7 +184,7 @@ li { margin-bottom: 0.5rem; }
 .docnav a:hover { background: var(--soft-green); }
 .docnav a.current { background: var(--primary-color); color: white; }
 
-.doc h2 { scroll-margin-top: 6rem; }
+.doc h2, .doc li[id] { scroll-margin-top: 6rem; }
 
 .doc h3 {
     color: var(--secondary-color);
