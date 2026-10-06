@@ -243,6 +243,38 @@ th, td {
 
 th { background: var(--soft-green); color: var(--primary-color); }
 
+/* Captures d'écran : un téléphone, un poste de bureau, ou les deux côte à côte */
+.captures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 1.8rem 0;
+}
+
+.captures a { display: block; line-height: 0; min-width: 0; }
+.captures a.telephone { flex: 0 1 210px; }
+.captures a.bureau { flex: 1 1 420px; }
+
+.captures img {
+    width: 100%;
+    height: auto;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.captures a.telephone img { border-radius: 16px; }
+
+.captures figcaption {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--muted-color);
+}
+
 .pager {
     display: flex;
     justify-content: space-between;
