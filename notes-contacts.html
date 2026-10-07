@@ -5,27 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notes, documents et contacts - Documentation du Biais</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/icone.png">
+    <script src="doc.js"></script>
 </head>
 <body>
 
-<header class="compact">
-    <h1><a href="index.html">Le Biais</a> · Documentation</h1>
+<!-- navigation : bloc généré par tools/doc/navigation.py, ne pas modifier à la main -->
+<header class="pan">
+    <div class="carte" aria-hidden="true"><div class="trait"></div><div class="sentier"></div></div>
+    <a class="bandeau" href="index.html"><img src="images/bandeau-houlette.png" alt="" width="660" height="319"><img class="lettres" src="images/bandeau-lettres.png" alt="Le Biais" width="660" height="319"></a>
+    <p class="sous">Documentation</p>
+    <input type="checkbox" id="bascule-chapitres" class="bascule">
+    <label for="bascule-chapitres" class="bouton-chapitres">Chapitres</label>
+    <nav class="chapitres" aria-label="Chapitres de la documentation">
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="premiers-pas.html">Premiers pas</a></li>
+            <li><a href="garde-chantier.html">Garde &amp; chantier</a></li>
+            <li><a href="troupeau.html">Troupeau</a></li>
+            <li><a href="soins.html">Soins</a></li>
+            <li><a href="paturage.html">Pâturage</a></li>
+            <li><a href="notes-contacts.html" aria-current="page">Notes &amp; contacts</a></li>
+            <li><a href="suivi.html">Suivi &amp; export</a></li>
+            <li><a href="outils.html">Outils</a></li>
+            <li><a href="synchronisation.html">Partage &amp; paramètres</a></li>
+        </ul>
+    </nav>
 </header>
-
-<nav class="docnav" aria-label="Chapitres de la documentation">
-    <ul>
-        <li><a href="index.html">🏠 Accueil</a></li>
-        <li><a href="premiers-pas.html">🚀 Premiers pas</a></li>
-        <li><a href="garde-chantier.html">🛡️ Garde &amp; chantier</a></li>
-        <li><a href="troupeau.html">🐏 Troupeau</a></li>
-        <li><a href="soins.html">💉 Soins</a></li>
-        <li><a href="paturage.html">🗺️ Pâturage</a></li>
-        <li><a href="notes-contacts.html" class="current">📝 Notes &amp; contacts</a></li>
-        <li><a href="suivi.html">📅 Suivi &amp; export</a></li>
-        <li><a href="outils.html">🧰 Outils</a></li>
-        <li><a href="synchronisation.html">🔄 Partage &amp; paramètres</a></li>
-    </ul>
-</nav>
+<!-- /navigation -->
 
 <div class="container doc">
     <h1>Notes, documents et contacts</h1>
