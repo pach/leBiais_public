@@ -179,6 +179,40 @@ li { margin-bottom: 0.35em; }
     color: var(--gris);
 }
 
+/* Les deux flèches « page précédente » et « page suivante », à droite du titre. */
+.pas {
+    float: right;
+    display: flex;
+    gap: 8px;
+    margin: 0 0 8px 16px;
+}
+
+.pas a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #fff;
+    border: 1px solid var(--filet);
+    border-radius: 6px;
+}
+
+.pas a:hover { border-color: var(--vert-fonce); }
+
+/* Seul le titre partage sa ligne avec les flèches ; le chapeau passe dessous. */
+.entete .lead { clear: right; }
+
+.pas svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: var(--vert-fonce);
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
 .toc {
     margin-top: 22px;
     font-size: 15px;
