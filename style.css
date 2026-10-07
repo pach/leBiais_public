@@ -151,7 +151,7 @@ html.premiere-visite .bandeau .lettres { animation: apparition 2s cubic-bezier(0
     padding: 22px 18px 40px;
 }
 
-.container > h1 {
+.container h1 {
     margin: 0;
     font: 900 32px/1.05 var(--titre);
 }
@@ -440,11 +440,11 @@ footer p { margin-top: 0.2em; }
     .pan .sous { text-shadow: 0 0 2px var(--sol), 0 0 4px var(--sol); }
 
     .container {
-        max-width: calc(48em + 112px);
+        max-width: calc(54em + 112px);
         padding: 40px 56px 60px;
     }
 
-    .container > h1 { font-size: 44px; }
+    .container h1 { font-size: 44px; }
     h2 { font-size: 26px; }
 
     .toc ul { columns: 2; column-gap: 28px; }
@@ -456,5 +456,64 @@ footer p { margin-top: 0.2em; }
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 36px;
+    }
+}
+
+/* ------------------------------------------------ ordinateur : l'en-tête des chapitres reste visible */
+
+/* Titre, chapeau et sommaire restent collés en haut ; seul le contenu défile dessous.
+   Pas dans une fenêtre basse, où l'en-tête mangerait la place de la lecture. */
+@media (min-width: 900px) and (min-height: 620px) {
+    /* doc.js donne la hauteur réelle de l'en-tête ; à défaut, une valeur prudente. */
+    html:has(.entete) { scroll-padding-top: calc(var(--entete, 220px) + 14px); }
+
+    .container.doc { padding-top: 0; }
+
+    .entete {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        margin: 0 -56px;
+        padding: 26px 56px 12px;
+        background: var(--fond);
+        border-bottom: 1px solid var(--filet);
+    }
+
+    .entete h1 { font-size: 36px; }
+
+    .entete .lead {
+        margin-top: 6px;
+        font-size: 16px;
+    }
+
+    .entete .toc {
+        margin-top: 10px;
+        font-size: 14.5px;
+    }
+
+    /* « Sur cette page » : masqué à l'œil pour gagner une ligne, gardé pour les lecteurs d'écran. */
+    .entete .toc strong {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        white-space: nowrap;
+    }
+
+    /* Trois colonnes si la largeur le permet, moins sinon. */
+    .entete .toc ul { columns: 3 13em; }
+
+    /* Un retrait plutôt qu'une marge : une marge décale la première ligne des colonnes suivantes. */
+    .entete .toc li {
+        margin: 0;
+        padding-bottom: 0.2em;
+    }
+
+    /* Le filet de l'en-tête fait déjà la séparation. */
+    .entete + h2 {
+        margin-top: 1.2em;
+        padding-top: 0;
+        border-top: 0;
     }
 }
