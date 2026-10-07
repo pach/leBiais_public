@@ -29,13 +29,14 @@
 
 <div class="container doc">
     <h1>Pâturage et carte</h1>
-    <p class="lead">Décrire le territoire : ses quartiers, ses équipements, ses points d'eau — et le dessiner sur la carte.</p>
+    <p class="lead">Décrire le territoire : ses quartiers, ses équipements, ses points d'eau, les zones à éviter — et le dessiner sur la carte.</p>
 
     <div class="toc">
         <strong>Sur cette page</strong>
         <ul>
             <li><a href="#quartiers">Quartiers et sous-quartiers</a></li>
             <li><a href="#equipements">Ressources et équipements</a></li>
+            <li><a href="#defens">Zones de défens</a></li>
             <li><a href="#carte">La carte</a></li>
             <li><a href="#horsligne">Cartes hors ligne</a></li>
         </ul>
@@ -74,8 +75,28 @@
     </ul>
     <p>La liste se filtre par catégorie, par état et par quartier.</p>
 
+    <h2 id="defens">Zones de défens</h2>
+    <p>Un <strong>défens</strong> est une zone où le troupeau ne doit pas aller : une plantation, un captage, une combe où nichent les tétras. Il se trace librement sur la carte, sans tenir compte des limites des quartiers — un même défens peut en chevaucher plusieurs, ou sortir de l'alpage.</p>
+    <p>Chaque défens porte :</p>
+    <ul>
+        <li>un nom et un <strong>motif</strong> : défens ONF, captage d'eau, zone humide, nidification, danger, pré de fauche, jardin privé, ou autre ;</li>
+        <li>une <strong>période</strong>, en jour et mois (du 01/05 au 15/07) : elle vaut chaque année. Une seule date suffit (« jusqu'au 15/07 »), et sans date le défens est <strong>permanent</strong> ;</li>
+        <li>une <strong>couleur</strong>, proposée d'après le motif — vert pour l'ONF, bleu pour l'eau, orange pour la nidification, rouge pour le danger, jaune pour les prés et jardins — et que vous pouvez changer ;</li>
+        <li>une remarque, des <strong>photos</strong>, et des <strong>documents</strong> : la convention ou le contrat MAE qui fonde l'interdit, par exemple.</li>
+    </ul>
+    <p>Un document se joint de deux façons : <span class="ui">📂 Joindre un fichier</span> le range aussi dans vos <a href="notes-contacts.html#documents">documents</a>, sous l'étiquette <em>Défens</em> ; <span class="ui">Choisir un document existant</span> relie un papier déjà classé — le même contrat peut ainsi servir à plusieurs zones.</p>
+
+    <h3 id="defens-etat">Actif ou levé</h3>
+    <p>L'application compare la période à la date du jour, sans que vous ayez rien à cocher :</p>
+    <ul>
+        <li><strong>actif</strong> — le défens vaut aujourd'hui : sur la carte, il est <strong>hachuré</strong> en oblique dans sa couleur ;</li>
+        <li><strong>levé</strong> — la période est passée, ou pas encore venue : il n'en reste qu'un <strong>contour en tirets</strong>, pâli. On voit toujours où il se trouve, sans le confondre avec un interdit en vigueur.</li>
+    </ul>
+    <p>L'onglet <span class="ui">Défens</span> du pâturage les liste, ceux qui sont actifs en tête, et se filtre par motif. Depuis une fiche, <span class="ui">Voir sur la carte</span> y mène et <span class="ui">Modifier le contour</span> rouvre le tracé.</p>
+    <div class="tip"><p>Un défens ne déclenche aucune alerte quand un parcours de garde le traverse : c'est un repère sur la carte, pas un garde-fou.</p></div>
+
     <h2 id="carte">La carte</h2>
-    <p>La carte affiche les quartiers, sous-quartiers, cabanes, équipements et ressources ; une légende permet de masquer chaque famille.</p>
+    <p>La carte affiche les quartiers, sous-quartiers, <a href="#defens">défens</a>, cabanes, équipements et ressources ; une légende permet de masquer chaque famille. Sur le poste de bureau, elle liste aussi les défens un à un : une case masque une zone, un clic sur son nom cadre la carte dessus. Toucher un défens ouvre sa fiche.</p>
 
     <figure class="captures">
         <a class="bureau" href="captures/carte-bureau.png"><img src="captures/carte-bureau.png" alt="La carte sur le poste de bureau : contours des quartiers et sous-quartiers, cabanes et points d'eau, légende à gauche" width="1920" height="1140" loading="lazy"></a>
@@ -88,6 +109,7 @@
     <h3 id="carte-tracer">Tracer</h3>
     <ul>
         <li><strong>Ajouter / modifier un quartier ou un sous-quartier</strong> — le contour se dessine à main levée. <span class="ui">➕ Union</span> ajoute une zone au contour, <span class="ui">➖ Exclure</span> en retire une, <span class="ui">↩️ Annuler dernier</span> revient d'un trait.</li>
+        <li><strong>Ajouter / modifier un défens</strong> — le même tracé à main levée. À la validation d'un nouveau contour, la fiche s'ouvre pour saisir le nom, le motif et la période ; tant qu'elle n'est pas enregistrée, rien n'est créé.</li>
         <li><strong>Ajouter une couchade ou un équipement</strong> — un appui sur la carte le place.</li>
         <li>Deux modes : <span class="ui">✏️ Tracer</span> (un doigt dessine, deux doigts déplacent) et <span class="ui">🖐️ Naviguer</span>. Sur poste de bureau : cliquer-glisser, molette pour zoomer, Maj + molette pour pivoter.</li>
     </ul>
