@@ -132,15 +132,16 @@ html.premiere-visite .bandeau .lettres { animation: apparition 2s cubic-bezier(0
     border-left: 3px solid transparent;
     color: #2C332C;
     font-size: 15px;
+    font-weight: 700;
     text-decoration: none;
 }
 
-.chapitres a:hover { text-decoration: underline; }
+.chapitres a:hover { color: var(--vert-fonce); }
 
+/* Tous les chapitres sont en gras : le courant se reconnaît à sa couleur et à son trait or. */
 .chapitres a[aria-current="page"] {
     border-left-color: var(--or);
     color: var(--vert-fonce);
-    font-weight: 700;
 }
 
 /* ------------------------------------------------ contenu */
@@ -384,6 +385,8 @@ footer p { margin-top: 0.2em; }
         width: 264px;
         height: 678px;
         opacity: 0.22;
+        /* Posée sur le pan, elle ne doit pas arrêter les clics destinés aux chapitres. */
+        pointer-events: none;
         -webkit-mask-image: linear-gradient(to bottom, transparent 80px, #000 240px, #000 560px, transparent 678px);
         mask-image: linear-gradient(to bottom, transparent 80px, #000 240px, #000 560px, transparent 678px);
     }
@@ -411,6 +414,7 @@ footer p { margin-top: 0.2em; }
         display: block;
         margin: 0 0 22px;
         font-size: 13px;
+        font-weight: 700;
         color: #3F463F;
     }
 
@@ -419,7 +423,9 @@ footer p { margin-top: 0.2em; }
 
     .chapitres {
         display: block;
-        position: static;
+        /* « relative » et non « static » : les chapitres passent ainsi devant la carte. */
+        position: relative;
+        top: auto;
         max-height: none;
         overflow: visible;
         padding: 0;
