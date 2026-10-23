@@ -272,7 +272,7 @@ th, td {
 
 th { background: var(--sol); color: var(--vert-fonce); }
 
-/* Captures d'écran : un téléphone, un poste de bureau, ou les deux côte à côte */
+/* Captures d'écran : un téléphone, une tablette, un poste de bureau, ou plusieurs côte à côte */
 .captures {
     display: flex;
     flex-wrap: wrap;
@@ -284,6 +284,7 @@ th { background: var(--sol); color: var(--vert-fonce); }
 
 .captures a { display: block; min-width: 0; line-height: 0; }
 .captures a.telephone { flex: 0 1 210px; }
+.captures a.tablette { flex: 0 1 320px; }
 .captures a.bureau { flex: 1 1 420px; }
 
 .captures img {
@@ -295,6 +296,7 @@ th { background: var(--sol); color: var(--vert-fonce); }
 }
 
 .captures a.telephone img { border-radius: 14px; }
+.captures a.tablette img { border-radius: 8px; }
 
 .captures figcaption {
     flex-basis: 100%;

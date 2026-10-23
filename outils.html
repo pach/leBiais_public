@@ -50,6 +50,7 @@
             <ul>
                 <li><a href="#compteur">Compteur <span class="tag">Android seul</span></a></li>
                 <li><a href="#odometre">Odomètre <span class="tag">Android seul</span></a></li>
+                <li><a href="#filets">Combien de filets ?</a></li>
                 <li><a href="#remarquables">Bêtes remarquables</a></li>
                 <li><a href="#surprises">Et les surprises ?</a></li>
             </ul>
@@ -57,8 +58,8 @@
     </header>
 
     <figure class="captures">
-        <a class="telephone" href="captures/outils-telephone.png"><img src="captures/outils-telephone.png" alt="L'écran Outils sur téléphone : compteur, odomètre, bêtes remarquables" width="800" height="1680" loading="lazy"></a>
-        <figcaption>L'écran Outils, sur téléphone.</figcaption>
+        <a class="telephone" href="captures/outils-telephone.png"><img src="captures/outils-telephone.png" alt="L'écran Outils sur téléphone : une ligne par outil, avec son pictogramme et sa description" width="800" height="1680" loading="lazy"></a>
+        <figcaption>L'écran Outils, sur téléphone : un outil par ligne, avec sa description dessous.</figcaption>
     </figure>
 
     <h2 id="compteur">Compteur <span class="tag">Android seul</span></h2>
@@ -78,6 +79,54 @@
         <li>Quand la précision du GPS dépasse un seuil réglable, l'affichage se grise : la mesure continue, mais elle est moins sûre.</li>
     </ul>
     <div class="tip"><p>Les bips utilisent le volume des médias : l'application propose de le monter au maximum avant de partir.</p></div>
+
+    <h2 id="filets">Combien de filets ?</h2>
+    <p>Pour estimer, <strong>avant de partir</strong>, le nombre de filets qu'il faut pour un parc. On dessine le parc sur la carte ; l'outil donne sa longueur et le nombre de filets (<strong>un filet fait 50 m</strong>). Il fonctionne sur téléphone, sur tablette et sur le poste de bureau.</p>
+
+    <figure class="captures">
+        <a class="telephone" href="captures/filets-telephone.png"><img src="captures/filets-telephone.png" alt="L'outil Combien de filets sur téléphone : un parc fermé tracé sur la carte, alternance de couleurs tous les 50 m, longueur et nombre de filets en haut, modes de tracé en bas" width="800" height="1680" loading="lazy"></a>
+        <a class="bureau" href="captures/filets-bureau.png"><img src="captures/filets-bureau.png" alt="L'outil Combien de filets sur le poste de bureau" width="1920" height="1140" loading="lazy"></a>
+        <figcaption>Un parc de 693 m : 14 filets, dont le dernier, plus court, est d'une troisième couleur.</figcaption>
+    </figure>
+
+    <h3 id="filets-tracer">Dessiner le parc</h3>
+    <p>L'encadré du bas porte les modes de tracé :</p>
+    <ul>
+        <li><span class="ui">Tracer</span> — un appui pose un point et le relie au précédent. Dès <strong>deux points</strong>, la longueur et le nombre de filets s'affichent.</li>
+        <li>Un appui sur le <strong>premier point</strong> (le plus gros, en jaune) <strong>ferme</strong> le parc, à partir de trois points.</li>
+        <li><span class="ui">Déplacer</span> — on fait glisser un point ; le calcul suit en direct. Un glissé ailleurs déplace la carte.</li>
+        <li><span class="ui">+ Point</span> — un appui sur le tracé ajoute un point à cet endroit.</li>
+        <li><span class="ui">− Point</span> — un appui sur un point le retire. Un parc fermé de trois points qui en perd un redevient ouvert ; on ne descend pas sous deux points.</li>
+        <li><span class="ui">Effacer</span> — repart d'un tracé vide (une confirmation est demandée pour un parc fermé ou enregistré).</li>
+    </ul>
+    <p>La carte de cet outil <strong>zoome plus près</strong> que la carte de travail (jusqu'au niveau 22, de l'ordre de trois centimètres par pixel) : de quoi poser un point au pied d'un piquet ou d'un mur. Au-delà du niveau que sert le fond de carte, l'image est simplement agrandie.</p>
+    <p>Le parc n'est <strong>pas obligatoirement fermé</strong> : un filet de parage qui barre une zone, ou un parc dont un côté est déjà un mur ou une clôture en dur, se dessine en tracé ouvert.</p>
+
+    <h3 id="filets-resultat">Longueur, filets et portes</h3>
+    <ul>
+        <li>Le <strong>nombre de filets</strong> est un minimum : la longueur divisée par 50 m, arrondie à l'entier supérieur. Un tracé de moins de 50 m compte un filet.</li>
+        <li>Le tracé alterne <strong>deux couleurs tous les 50 m</strong> : chaque changement de couleur est une <strong>jonction</strong> entre deux filets, donc une porte possible pour faire entrer les brebis. La <strong>troisième couleur</strong> marque la pièce de moins de 50 m, le reste du tracé.</li>
+        <li>Le curseur <span class="ui">Décalage</span> (de 0 à 49 m) fait glisser cette alternance pour chercher le meilleur emplacement des portes. Sur un parc fermé, le nombre de filets ne change pas ; sur un parc ouvert, un décalage non nul ajoute une pièce courte au départ du tracé, et le nombre de filets la compte.</li>
+        <li>La longueur tient compte de la <strong>pente</strong>.</li>
+    </ul>
+
+    <h3 id="filets-altitude">L'altitude et le hors ligne</h3>
+    <p>La pente vient de tuiles d'altitude, lues dans la mémoire de l'application. Elles se rapatrient avec les cartes : dans les paramètres, <span class="ui">Cartes hors ligne</span> propose une ligne <span class="ui">Altitude (pour Combien de filets ?)</span>, cochée par défaut (voir <a href="paturage.html#horsligne">Cartes hors ligne</a>). Avec du réseau, une tuile manquante est téléchargée et gardée.</p>
+    <div class="warn"><p>Sans altitude, la longueur est celle <strong>à plat</strong>, et l'écran l'indique : <em>« Altitude indisponible : longueur à plat »</em>. Si l'altitude manque seulement par endroits, la note le dit et ces tronçons sont comptés à plat. La longueur se corrige toute seule quand les tuiles arrivent. Sur une pente de 20 %, la correction est de l'ordre de 2 % : un filet d'écart est possible.</p></div>
+    <p>La source des tuiles d'altitude (Terrain Tiles : Mapzen/Tilezen, SRTM et autres sources ouvertes) est créditée sur l'écran quand l'altitude a servi.</p>
+
+    <h3 id="filets-calques">Choisir le fond de carte</h3>
+    <p>Le bouton rond <span class="ui">Calques</span>, en haut de la colonne de boutons à droite de la carte, ouvre la même <a href="paturage.html#carte-fonds">gestion des calques</a> que la carte de travail : on y ajoute un fond (par exemple les <strong>photographies aériennes</strong> IGN ou l'<strong>imagerie satellite</strong>) ou on superpose plusieurs fonds avec leur opacité. Les réglages sont <strong>partagés avec la carte</strong> : un fond choisi dans l'un se retrouve dans l'autre. Hors ligne, un fond ne s'affiche que s'il a été <a href="paturage.html#horsligne">rapatrié</a> ou déjà consulté.</p>
+
+    <h3 id="filets-enregistrer">Garder un parc</h3>
+    <p>Le plus souvent, on dessine pour calculer, et <strong>rien n'est gardé</strong> en quittant l'écran. Pour conserver un parc :</p>
+    <ul>
+        <li><span class="ui">Enregistrer…</span> demande un <strong>nom</strong> (obligatoire), un <strong>quartier</strong> (facultatif) et des remarques. Le décalage est gardé avec le parc ; la longueur et le nombre de filets se recalculent à l'ouverture.</li>
+        <li><span class="ui">Mes parcs</span> liste tous les parcs enregistrés : on peut en ouvrir un, le renommer, le rattacher à un quartier ou l'en détacher, ou le supprimer.</li>
+        <li>Un parc rattaché à un quartier se rouvre aussi depuis la <a href="paturage.html#quartiers">fiche du quartier</a>, dans la section <span class="ui">Parcs de filets</span>. Supprimer un quartier détache ses parcs sans les supprimer.</li>
+        <li>Les parcs se synchronisent avec le projet, comme les équipements.</li>
+    </ul>
+    <div class="tip"><p>Le tracé en cours se retrouve si l'écran se retourne ou si l'application est rechargée, même sans enregistrement.</p></div>
 
     <h2 id="remarquables">Bêtes remarquables</h2>
     <p>Raccourci vers le pointage des <a href="troupeau.html#remarquables">bêtes remarquables</a>.</p>

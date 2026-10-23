@@ -63,14 +63,16 @@
         <li>un nom, une couleur, et un <strong>contour</strong> tracé sur la carte ;</li>
         <li>les <strong>périodes de pâturage</strong> prévues (du… au…) ;</li>
         <li>ses <strong>couchades</strong> et les équipements qui s'y trouvent ;</li>
+        <li>les <strong>parcs de filets</strong> qu'on y a enregistrés avec l'outil <a href="outils.html#filets">Combien de filets ?</a> (quartiers seulement) ;</li>
         <li>des <strong>notes</strong> datées — état de l'herbe, passages délicats, consignes.</li>
     </ul>
     <p>La fiche d'un quartier affiche aussi ce que les gardes y ont relevé : <em>dernière pâture le…, n jours en tout</em>, ou « jamais pâturé ». C'est le pâturage réalisé, à comparer au pâturage prévu.</p>
 
     <figure class="captures">
         <a class="telephone" href="captures/quartiers-telephone.png"><img src="captures/quartiers-telephone.png" alt="Les quartiers sur téléphone : une carte par quartier avec ses périodes, ses couchades et ses équipements" width="800" height="1680" loading="lazy"></a>
+        <a class="tablette" href="captures/quartiers-tablette.png"><img src="captures/quartiers-tablette.png" alt="Le pâturage sur tablette : volets à gauche, liste des quartiers, fiche du quartier choisi avec ses sous-quartiers" width="1920" height="1200" loading="lazy"></a>
         <a class="bureau" href="captures/quartiers-bureau.png"><img src="captures/quartiers-bureau.png" alt="Les quartiers sur le poste de bureau : liste à gauche, fiche du quartier avec ses sous-quartiers et leurs jours de pâture à droite" width="1920" height="1140" loading="lazy"></a>
-        <figcaption>Les quartiers sur téléphone et sur le poste de bureau, où la fiche du quartier détaille ses sous-quartiers.</figcaption>
+        <figcaption>Les quartiers sur téléphone, puis sur tablette et sur le poste de bureau, où la fiche du quartier détaille ses sous-quartiers.</figcaption>
     </figure>
 
     <h2 id="equipements">Ressources et équipements</h2>
@@ -99,7 +101,7 @@
         <li>une <strong>couleur</strong>, proposée d'après le motif — vert pour l'ONF, bleu pour l'eau, orange pour la nidification, rouge pour le danger, jaune pour les prés et jardins — et que vous pouvez changer ;</li>
         <li>une remarque, des <strong>photos</strong>, et des <strong>documents</strong> : la convention ou le contrat MAE qui fonde l'interdit, par exemple.</li>
     </ul>
-    <p>Un document se joint de deux façons : <span class="ui">📂 Joindre un fichier</span> le range aussi dans vos <a href="notes-contacts.html#documents">documents</a>, sous l'étiquette <em>Défens</em> ; <span class="ui">Choisir un document existant</span> relie un papier déjà classé — le même contrat peut ainsi servir à plusieurs zones.</p>
+    <p>Un document se joint de deux façons : <span class="ui">Joindre un fichier</span> le range aussi dans vos <a href="notes-contacts.html#documents">documents</a>, sous l'étiquette <em>Défens</em> ; <span class="ui">Choisir un document existant</span> relie un papier déjà classé — le même contrat peut ainsi servir à plusieurs zones.</p>
 
     <h3 id="defens-etat">Actif ou levé</h3>
     <p>L'application compare la période à la date du jour, sans que vous ayez rien à cocher :</p>
@@ -114,12 +116,12 @@
     <p>La carte affiche les quartiers, sous-quartiers, <a href="#defens">défens</a>, cabanes, équipements et ressources ; une légende permet de masquer chaque famille. Sur le poste de bureau, elle liste aussi les défens un à un : une case masque une zone, un clic sur son nom cadre la carte dessus. Toucher un défens ouvre sa fiche.</p>
 
     <figure class="captures">
-        <a class="bureau" href="captures/carte-bureau.png"><img src="captures/carte-bureau.png" alt="La carte sur le poste de bureau : contours des quartiers et sous-quartiers, cabanes et points d'eau, légende à gauche" width="1920" height="1140" loading="lazy"></a>
-        <figcaption>La carte du poste de bureau, ici sans fond de carte. Sur téléphone, l'écran est différent : la carte occupe tout l'écran.</figcaption>
+        <a class="bureau" href="captures/carte-bureau.png"><img src="captures/carte-bureau.png" alt="La carte sur le poste de bureau : contours des quartiers et sous-quartiers sur un fond topographique, actions et légende à gauche" width="1920" height="1140" loading="lazy"></a>
+        <figcaption>La carte du poste de bureau, ici sur le fond OpenTopoMap. Sur téléphone, l'écran est différent : la carte occupe tout l'écran.</figcaption>
     </figure>
 
     <h3 id="carte-fonds">Fonds et calques</h3>
-    <p><span class="ui">Gestion des calques</span> superpose plusieurs fonds, chacun avec son opacité et son rang : OpenTopoMap, OpenStreetMap, IGN (carte topographique, plan, photographies aériennes, cadastre) et imagerie satellite Esri. Un cadastre à moitié transparent sur une photo aérienne, par exemple.</p>
+    <p><span class="ui">Gestion des calques</span> superpose plusieurs fonds, chacun avec son opacité et son rang : OpenTopoMap, OpenStreetMap, IGN (carte topographique, plan, photographies aériennes, cadastre) et imagerie satellite Esri. Un cadastre à moitié transparent sur une photo aérienne, par exemple. Les calques choisis sont les mêmes dans l'outil <a href="outils.html#filets-calques">Combien de filets ?</a>.</p>
 
     <h3 id="carte-tracer">Tracer</h3>
     <ul>
@@ -135,6 +137,7 @@
 
     <h2 id="horsligne">Cartes hors ligne</h2>
     <p>Là-haut, pas de réseau : il faut emporter la carte. Dans les paramètres, <span class="ui">Cartes hors ligne</span> → <span class="ui">Rapatrier avant de monter</span> télécharge les tuiles qui couvrent <strong>vos quartiers</strong>, et seulement elles. L'écran annonce le nombre de tuiles et le poids avant de commencer.</p>
+    <p>La ligne <span class="ui">Altitude (pour Combien de filets ?)</span> est cochée par défaut : elle emporte aussi les tuiles d'altitude des quartiers, que l'outil <a href="outils.html#filets-altitude">Combien de filets ?</a> utilise pour tenir compte de la pente sans réseau. Leur source (Terrain Tiles : Mapzen/Tilezen, SRTM et autres sources ouvertes, AWS Open Data) est créditée sur l'écran.</p>
     <div class="warn"><p>Tracez d'abord vos quartiers : sans contour, il n'y a pas de zone à emporter. Certains fonds, tenus par des bénévoles, interdisent le téléchargement en masse : ils restent consultables hors ligne là où vous êtes déjà passé, car l'application garde ce qu'elle a affiché.</p></div>
 
     <div class="pager">

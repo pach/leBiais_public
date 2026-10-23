@@ -60,7 +60,7 @@
     </header>
 
     <h2 id="saisir">Saisir un soin</h2>
-    <p><span class="ui">➕ Saisir un soin</span> ouvre un formulaire qui se remplit de haut en bas :</p>
+    <p><span class="ui">Saisir un soin</span> ouvre un formulaire qui se remplit de haut en bas :</p>
     <ol>
         <li><strong>L'animal</strong> — marque, numéro de boucle, catégorie (brebis, agneau, bélier…), caractéristiques, et un <em>marquage spécifique</em> (le trait de bori posé pour retrouver l'animal). Les marquages les plus utilisés se rangent dans une liste de <span class="ui">Marquages pré-remplis</span>.</li>
         <li><strong>La nature du soin</strong> — choisie parmi les catégories de pathologies : Pieds et boiteries, Peau et plaie, Problèmes respiratoires, Yeux, Mamelle, Autre. Depuis cette liste, on peut consulter la <a href="#fiches">fiche maladie</a> correspondante, ou enregistrer une nouvelle pathologie pour la prochaine fois.</li>
@@ -74,9 +74,11 @@
     <p><span class="ui">+ Ajouter un autre soin pour cette bête</span> enchaîne plusieurs soins sur le même animal sans ressaisir son identité.</p>
 
     <figure class="captures">
-        <a class="telephone" href="captures/soins-telephone.png"><img src="captures/soins-telephone.png" alt="L'écran Soins sur téléphone : soins à faire, infirmerie, saisie, naissances, carnet, fiches maladies, pharmacie, export" width="800" height="1680" loading="lazy"></a>
+        <a class="telephone" href="captures/soins-telephone.png"><img src="captures/soins-telephone.png" alt="Le carnet de soins sur téléphone : soins à faire et infirmerie repliés, puis un bouton par rubrique, et « Saisir un soin » en pied" width="800" height="1680" loading="lazy"></a>
+        <a class="tablette" href="captures/soins-tablette.png"><img src="captures/soins-tablette.png" alt="L'écran Soins sur tablette : volets à gauche, soins à faire au centre, boutons Exporter et Saisir un soin en pied" width="1920" height="1200" loading="lazy"></a>
         <a class="telephone" href="captures/soin-saisie-telephone.png"><img src="captures/soin-saisie-telephone.png" alt="Le formulaire « Saisir un soin » sur téléphone : date, marque, boucle, caractéristiques, catégorie d'animal" width="800" height="1680" loading="lazy"></a>
-        <figcaption>L'écran Soins sur téléphone, et le début du formulaire de saisie.</figcaption>
+        <a class="tablette" href="captures/soin-saisie-tablette.png"><img src="captures/soin-saisie-tablette.png" alt="Le formulaire « Saisir un soin » sur tablette, ouvert par-dessus l'écran Soins" width="1920" height="1200" loading="lazy"></a>
+        <figcaption>L'écran Soins sur téléphone et sur tablette (où les rubriques se rangent en volets à gauche), et le début du formulaire de saisie sur l'un et l'autre.</figcaption>
     </figure>
 
     <h2 id="afaire">Soins à faire</h2>
@@ -95,7 +97,7 @@
 
     <h2 id="carnet">Carnet de soins</h2>
     <p><span class="ui">Consulter le carnet de soins</span> présente tous les soins en registre. Les filtres se combinent : période, marques, catégories de pathologie, numéro de boucle, catégorie d'animal, personne qui a soigné, et recherche libre. Chaque ligne s'ouvre pour être relue ou modifiée.</p>
-    <p><span class="ui">📤 Exporter le carnet de soins</span> produit, pour une période, des marques et des catégories choisies, un fichier <strong>PDF</strong> ou <strong>TXT</strong> : récapitulatif par pathologie, marques et numéros d'exploitation, puis liste chronologique détaillée. De quoi transmettre à chaque éleveur ce qui concerne ses bêtes.</p>
+    <p><span class="ui">Exporter le carnet de soins</span> produit, pour une période, des marques et des catégories choisies, un fichier <strong>PDF</strong> ou <strong>TXT</strong> : récapitulatif par pathologie, marques et numéros d'exploitation, puis liste chronologique détaillée. De quoi transmettre à chaque éleveur ce qui concerne ses bêtes.</p>
     <p>L'<a href="suivi.html#export">export général</a> propose en plus des fiches récapitulatives des soins par marque.</p>
 
     <figure class="captures">
@@ -109,7 +111,7 @@
     <h2 id="pharmacie">Pharmacie</h2>
     <p>L'inventaire des produits : nom, type (antibiotique, anti-inflammatoire, huile essentielle, poudre, autre), date d'ouverture, stock, remarques. Deux cases comptent pour la saisie des soins :</p>
     <ul>
-        <li><strong>Produit injectable (💉)</strong> — le produit est proposé à l'étape « piqûre » ;</li>
+        <li><strong>Produit injectable</strong> — le produit est proposé à l'étape « piqûre » ;</li>
         <li><strong>Nécessite un rappel de piqûre</strong>, avec son délai en jours — le rappel se crée tout seul.</li>
     </ul>
     <p>Un produit dont le stock est à zéro est signalé « en rupture ».</p>
