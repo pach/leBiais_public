@@ -113,32 +113,45 @@
     <div class="tip"><p>Un défens ne déclenche aucune alerte quand un parcours de garde le traverse : c'est un repère sur la carte, pas un garde-fou.</p></div>
 
     <h2 id="carte">La carte</h2>
-    <p>La carte affiche les quartiers, sous-quartiers, <a href="#defens">défens</a>, cabanes, équipements et ressources ; une légende permet de masquer chaque famille. Sur le poste de bureau, elle liste aussi les défens un à un : une case masque une zone, un clic sur son nom cadre la carte dessus. Toucher un défens ouvre sa fiche.</p>
+    <p>La carte affiche les quartiers, sous-quartiers, <a href="#defens">défens</a>, cabanes, équipements et ressources, avec le nom des zones écrit dessus. Toucher un défens ouvre sa fiche.</p>
+    <p>Les réglages d'affichage et les ajouts se rangent à part de la carte, selon l'écran :</p>
+    <ul>
+        <li><strong>au téléphone</strong> (et sur une tablette tenue debout), un <strong>tiroir</strong> se tire du bas de l'écran. Il a trois hauteurs : fermé, il ne montre que sa tête (« 2 quartiers · 1 défens ») ; à mi-hauteur, une ligne par quartier, avec sa case et son nombre de sous-quartiers ; ouvert, tout le contenu. Un toucher sur la tête passe à la hauteur suivante, et on peut aussi le tirer du doigt ;</li>
+        <li><strong>sur une tablette couchée et sur le poste de bureau</strong>, le même contenu s'affiche dans un <strong>volet</strong> à gauche de la carte.</li>
+    </ul>
+    <p>Le tiroir ou le volet porte la rubrique <span class="ui">Afficher</span> : une case par famille (quartiers, sous-quartiers, défens, cabanes, équipements, ressources), et, dépliés sous elle, les quartiers, leurs sous-quartiers et les défens un à un. Une case masque une zone, un clic sur son nom cadre la carte dessus. Plus bas, la rubrique <span class="ui">Ajouter ou modifier</span> lance les tracés (voir plus bas).</p>
 
     <figure class="captures">
-        <a class="bureau" href="captures/carte-bureau.png"><img src="captures/carte-bureau.png" alt="La carte sur le poste de bureau : contours des quartiers et sous-quartiers sur un fond topographique, actions et légende à gauche" width="1920" height="1140" loading="lazy"></a>
-        <figcaption>La carte du poste de bureau, ici sur le fond OpenTopoMap. Sur téléphone, l'écran est différent : la carte occupe tout l'écran.</figcaption>
+        <a class="telephone" href="captures/carte-telephone.png"><img src="captures/carte-telephone.png" alt="La carte sur téléphone : contours des quartiers sur un fond topographique, boutons des fonds, de la boussole et du zoom à droite, tiroir à mi-hauteur en bas" width="800" height="1680" loading="lazy"></a>
+        <a class="bureau" href="captures/carte-bureau.png"><img src="captures/carte-bureau.png" alt="La carte sur le poste de bureau : contours des quartiers et sous-quartiers sur un fond topographique, volet Afficher et Ajouter ou modifier à gauche" width="1920" height="1140" loading="lazy"></a>
+        <figcaption>La carte sur téléphone, le tiroir à mi-hauteur, puis sur le poste de bureau, où le même contenu occupe un volet. Fond OpenTopoMap, sur un alpage d'exemple.</figcaption>
     </figure>
 
+    <p>Quatre boutons de papier restent à leurs coins, quel que soit le mode : <span class="ui">Calques</span> (les fonds), la <strong>boussole</strong> (un toucher remet le nord en haut ; la glisser fait tourner la carte), <span class="ui">Zoomer</span> et <span class="ui">Dézoomer</span>. Au téléphone et à la tablette, un cinquième, <span class="ui">Me situer</span>, centre la carte sur votre position, relevée par le GPS : l'appareil demande l'autorisation la première fois. Le poste de bureau n'a pas de GPS, donc pas ce bouton.</p>
+    <p>En bas à gauche, une petite mention nomme les sources des fonds affichés (« © IGN · OpenTopoMap »).</p>
+
     <h3 id="carte-fonds">Fonds et calques</h3>
-    <p><span class="ui">Gestion des calques</span> superpose plusieurs fonds, chacun avec son opacité et son rang : OpenTopoMap, OpenStreetMap, IGN (carte topographique, plan, photographies aériennes, cadastre) et imagerie satellite Esri. Un cadastre à moitié transparent sur une photo aérienne, par exemple. Les calques choisis sont les mêmes dans l'outil <a href="outils.html#filets-calques">Combien de filets ?</a>.</p>
+    <p><span class="ui">Calques</span> ouvre les <span class="ui">Fonds de carte</span> : on y ajoute les fonds qu'on veut superposer, chacun avec son <strong>opacité</strong> et son rang (monter, descendre, supprimer). Sont proposés : OpenTopoMap, OpenStreetMap, IGN Plan, IGN Scan 25, IGN Satellite (photographies aériennes), IGN Cadastre et Esri Satellite. Un cadastre à moitié transparent sur une photo aérienne, par exemple. La mention de la source de chaque fond se lit sous son nom. Les calques choisis sont les mêmes dans l'outil <a href="outils.html#filets-calques">Combien de filets ?</a>.</p>
+    <p>Le cadastre se superpose aux autres fonds mais ne se télécharge pas : il ne s'affiche qu'avec du réseau, ou là où vous l'avez déjà regardé.</p>
 
     <h3 id="carte-tracer">Tracer</h3>
+    <p>Les actions de la rubrique <span class="ui">Ajouter ou modifier</span> :</p>
     <ul>
-        <li><strong>Ajouter / modifier un quartier ou un sous-quartier</strong> — le contour se dessine à main levée. <span class="ui">➕ Union</span> ajoute une zone au contour, <span class="ui">➖ Exclure</span> en retire une, <span class="ui">↩️ Annuler dernier</span> revient d'un trait.</li>
+        <li><strong>Ajouter / modifier un quartier ou un sous-quartier</strong> — le contour se dessine à main levée. Pendant le tracé, une feuille d'outils s'ouvre : <span class="ui">Ajouter</span> une zone au contour ou <span class="ui">Retirer</span> une zone, <span class="ui">Dernier trait</span> pour revenir d'un trait, <span class="ui">Tout effacer</span>, puis <span class="ui">Valider le contour</span> ou <span class="ui">Annuler</span>. Un sous-quartier peut aussi se créer depuis une sélection de zones.</li>
         <li><strong>Ajouter / modifier un défens</strong> — le même tracé à main levée. À la validation d'un nouveau contour, la fiche s'ouvre pour saisir le nom, le motif et la période ; tant qu'elle n'est pas enregistrée, rien n'est créé.</li>
         <li><strong>Ajouter une couchade ou un équipement</strong> — un appui sur la carte le place.</li>
-        <li>Deux modes : <span class="ui">✏️ Tracer</span> (un doigt dessine, deux doigts déplacent) et <span class="ui">🖐️ Naviguer</span>. Sur poste de bureau : cliquer-glisser, molette pour zoomer, Maj + molette pour pivoter.</li>
+        <li>Deux modes de doigt : <span class="ui">Tracer</span> (un doigt dessine, deux doigts déplacent la carte) et <span class="ui">Naviguer</span> pour la déplacer sans dessiner. Sur poste de bureau : cliquer-glisser pour dessiner, <span class="ui">Naviguer</span> ou la barre d'espace enfoncée pour déplacer, molette pour zoomer.</li>
     </ul>
-    <p>Quitter un tracé en cours demande confirmation : rien ne se perd par un geste malheureux.</p>
+    <p>Pendant un tracé, le menu de gauche du poste ne répond plus ; quitter un tracé en cours demande confirmation : rien ne se perd par un geste malheureux.</p>
 
     <h3 id="carte-relecture">Relire la saison</h3>
     <p>Depuis l'onglet <span class="ui">Quartiers</span> des statistiques, <span class="ui">Voir sur la carte</span> rejoue la saison : jour après jour, les sous-quartiers pâturés s'allument, puis s'estompent. La vitesse et la durée du fondu se règlent.</p>
 
     <h2 id="horsligne">Cartes hors ligne</h2>
-    <p>Là-haut, pas de réseau : il faut emporter la carte. Dans les paramètres, <span class="ui">Cartes hors ligne</span> → <span class="ui">Rapatrier avant de monter</span> télécharge les tuiles qui couvrent <strong>vos quartiers</strong>, et seulement elles. L'écran annonce le nombre de tuiles et le poids avant de commencer.</p>
+    <p>Là-haut, pas de réseau : il faut emporter la carte. Dans les paramètres, <span class="ui">Cartes hors ligne</span> → <span class="ui">Rapatrier avant de monter</span> télécharge les tuiles qui couvrent <strong>vos quartiers</strong>, et seulement elles. Le choix des fonds à emporter se fait par une case à cocher : <strong>IGN Plan</strong>, <strong>IGN Satellite</strong> (l'orthophoto) et <strong>OpenTopoMap</strong>. L'écran annonce le nombre de tuiles et le poids avant de commencer, et sous chaque fond la mention de sa source.</p>
     <p>La ligne <span class="ui">Altitude (pour Combien de filets ?)</span> est cochée par défaut : elle emporte aussi les tuiles d'altitude des quartiers, que l'outil <a href="outils.html#filets-altitude">Combien de filets ?</a> utilise pour tenir compte de la pente sans réseau. Leur source (Terrain Tiles : Mapzen/Tilezen, SRTM et autres sources ouvertes, AWS Open Data) est créditée sur l'écran.</p>
-    <div class="warn"><p>Tracez d'abord vos quartiers : sans contour, il n'y a pas de zone à emporter. Certains fonds, tenus par des bénévoles, interdisent le téléchargement en masse : ils restent consultables hors ligne là où vous êtes déjà passé, car l'application garde ce qu'elle a affiché.</p></div>
+    <p>Ce choix est propre à l'appareil : il ne part pas avec le projet, et le binôme qui le partage n'emporte pas forcément les mêmes fonds. L'écran dit aussi le poids des tuiles gardées, et permet de les <span class="ui">Vider</span>.</p>
+    <div class="warn"><p>Tracez d'abord vos quartiers : sans contour, il n'y a pas de zone à emporter. Le <strong>Scan 25</strong> de l'IGN, le cadastre, OpenStreetMap et Esri Satellite ne se téléchargent pas d'avance : leur licence ou la politique de leur serveur ne l'admet pas. Ils s'affichent avec du réseau, et restent consultables hors ligne là où vous êtes déjà passé, car l'application garde ce qu'elle a affiché.</p></div>
 
     <div class="pager">
         <span><a href="soins.html">← Soins</a></span>
