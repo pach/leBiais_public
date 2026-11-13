@@ -580,12 +580,17 @@ footer p { margin-top: 0.2em; }
 .page-pause .pause-filigrane { display: none; }
 
 .erreur-pause {
-    max-width: 40em;
-    margin: 12vh auto;
-    padding: 24px 28px 12px;
+    width: min(64em, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 28px 36px 16px;
     color: #fff;
     background: rgb(176, 28, 28);
     border-radius: 8px;
+}
+.page-pause {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
 }
 .erreur-pause h1 { margin-top: 0; color: #fff; }
 .erreur-pause a { color: #fff; font-weight: 600; }
