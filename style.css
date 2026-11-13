@@ -558,8 +558,8 @@ footer p { margin-top: 0.2em; }
 .pause-filigrane {
     position: fixed;
     left: 50%;
-    bottom: 16px;
-    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
     z-index: 1000;
     width: min(46em, calc(100% - 24px));
     max-height: calc(100vh - 32px);
