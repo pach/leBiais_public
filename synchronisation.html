@@ -97,6 +97,13 @@
         <li><strong>État</strong> — les paramètres affichent le dernier passage, réussi ou non, et la liste des derniers fichiers synchronisés. Le pictogramme de synchronisation de l'accueil force une synchronisation.</li>
         <li><span class="ui">Dissocier ce projet du Cloud</span> retire votre appareil ; le dernier appareil à partir efface toutes les données en ligne du projet.</li>
     </ul>
+    <h3 id="sans-cloud">Ce qui sort même sans synchronisation Cloud</h3>
+    <p>Quelques échanges avec le serveur ont lieu dans tous les cas, que la synchronisation Cloud du projet soit activée ou non. Quand elle est désactivée, ce sont les <strong>seules</strong> données qui quittent l'appareil :</p>
+    <ul>
+        <li><strong>Les scores des mini-jeux</strong> — le meilleur score de l'appareil à chaque jeu part au classement commun <span class="ui">Everyone, everywhere</span>, avec le nom inscrit au tableau, le temps de la partie et un identifiant d'installation tiré au hasard. Aucune donnée du projet ne l'accompagne. Le classement commun est relu au même serveur.</li>
+        <li><strong>Les bugs signalés et les idées proposées</strong> depuis l'écran <a href="#apropos">À propos</a>, quand vous les envoyez, avec le journal technique seulement si vous cochez la case.</li>
+    </ul>
+    <p>Le tableau <span class="ui">Mon projet</span> des scores, lui, fait partie des données du projet : il ne voyage qu'avec la synchronisation Cloud ou un échange direct.</p>
     <div class="warn"><p>Le lien d'invitation contient le secret du projet : ne le transmettez qu'aux personnes qui doivent accéder aux données. Un appareil resté hors ligne plus longtemps que la durée de conservation ne recevra pas ce qui a été effacé entre-temps — un échange direct le remet à niveau.</p></div>
 
     <h2 id="sauvegardes">Sauvegardes et importation</h2>
@@ -130,7 +137,7 @@
     <h2 id="apropos">À propos, bugs et idées</h2>
     <p>L'écran <span class="ui">À propos</span> raconte les origines de l'application, détaille ce qu'elle fait de vos données et donne les mentions légales. Deux boutons y attendent vos retours :</p>
     <ul>
-        <li><span class="ui">Signaler un bug</span> — ce que vous faisiez, ce qui s'est passé, ce que vous attendiez. Vous pouvez joindre le journal technique.</li>
+        <li><span class="ui">Signaler un bug</span> — ce que vous faisiez, ce qui s'est passé, ce que vous attendiez. Vous pouvez y joindre le journal technique en cochant la case : il n'est pas joint par défaut.</li>
         <li><span class="ui">Proposer une idée</span>.</li>
     </ul>
     <p>Le signalement devient un ticket <strong>public</strong> sur <a href="https://github.com/pach/LeBiais">github.com/pach/LeBiais</a> : n'y mettez rien de personnel (le journal technique peut contenir des noms de projets, de lieux ou d'animaux). Dans les paramètres, <span class="ui">Support &amp; Debug</span> permet aussi d'exporter et de partager les journaux après un plantage.</p>
